@@ -184,6 +184,7 @@
 		93D171E81885ABF70028FF0F /* FlxToolkitTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "FlxToolkitTests-Info.plist"; sourceTree = "<group>"; };
 		93D171EA1885ABF70028FF0F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		93D171EC1885ABF70028FF0F /* FlxToolkitTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FlxToolkitTests.m; sourceTree = "<group>"; };
+		93F051C6188833E200286167 /* FlxToolkitClasses.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlxToolkitClasses.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -243,6 +244,7 @@
 			children = (
 				935334AE18870BFE005462DF /* FlxToolkit.h */,
 				935334CC18870BFE005462DF /* FlxToolkit.m */,
+				93F051C6188833E200286167 /* FlxToolkitClasses.h */,
 				9353351D18870CD6005462DF /* FlxToolkitExtensions.h */,
 				9353351E18870E2D005462DF /* FlxToolkitDefines.h */,
 				9353351F18870F69005462DF /* FlxToolkitFunctions.h */,
