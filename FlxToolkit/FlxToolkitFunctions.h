@@ -33,8 +33,8 @@ do { \
 
 #define FlxAssert(expression, ...) \
     if(!(expression)) { \
-        NSString *__MAAssert_temp_string = [NSString stringWithFormat: @"Assertion failure: %s in %s on line %s:%d. %@", #expression, __PRETTY_FUNCTION__, __FILE__, __LINE__, [NSString stringWithFormat:__VA_ARGS__, nil]]; \
-        NSAssert(NO, __MAAssert_temp_string);\
+        NSString *assert_temp_string = [NSString stringWithFormat: @"Assertion failure: %s in %s on line %s:%d. %@", #expression, __PRETTY_FUNCTION__, __FILE__, __LINE__, [NSString stringWithFormat:__VA_ARGS__, nil]]; \
+        NSAssert(NO, assert_temp_string);\
         abort(); \
     }
 
