@@ -1,6 +1,6 @@
 ##Flexle Toolkit
 
-The Flexile toolkit is a library of classes, extensions, functions and defines I commonly use in development. I will try to hit the highlights below, but for complete information I recommend you read the header files (which are admittedly incomplete at the moment... it's my next todo). 
+The Flexile toolkit is a library of classes, extensions, functions and defines I commonly use in development. (see: [Flexile App](http://flexile.co)) I will try to hit the highlights below, but for complete information I recommend you read the header files (which are admittedly incomplete at the moment... it's my next todo). 
 
 I've tried to reduce the dependencies among the classes as much as possible. You can import `FlxToolkit.h` to import everything. I've also split the Toolkit into: Classes, Defines, Functions (also macros) and Extensions. Some of the classes, though, may import one of the other sections in their implementation file if I'm using that functionality.  
 
