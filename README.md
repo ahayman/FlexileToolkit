@@ -1,6 +1,8 @@
 ##Flexle Toolkit
 
-The Flexile toolkit is a library of classes, extensions, functions and defines I commonly use in development. I will try to hit the highlights below, but for complete information I recommend you read the header files (which are admittedly incomplete at the moment... it's my next todo).
+The Flexile toolkit is a library of classes, extensions, functions and defines I commonly use in development. I will try to hit the highlights below, but for complete information I recommend you read the header files (which are admittedly incomplete at the moment... it's my next todo). 
+
+I've tried to reduce the dependencies among the classes as much as possible. You can import `FlxToolkit.h` to import everything. I've also split the Toolkit into: Classes, Defines, Functions (also macros) and Extensions. Some of the classes, though, may import one of the other sections in their implementation file if I'm using that functionality.  
 
 ###Extensions
 In most cases the categories simply extend functionality. However, in a few cases functionality is altered. Most notably, the NSMutableArray and NSMutableDictionary classes have a category set on their subscripting methods. I originally did this in that weird transitionary state where subscripting was available, but the foundation classes weren't yet using it. It alters the behavior slightly (and in my opinion for the better):
@@ -8,6 +10,8 @@ In most cases the categories simply extend functionality. However, in a few case
 * You can remove a NSMutableDictionary item using: `dictionary[@"key"] = nil;`. Normally, this would result in a compiler warning, and ultimately runtime crash.
 * You can remove an array item using the same method: `array[1] = nil;`.
 * Array subscripts will not product an "out of bounds" exception. If your index is beyond the bounds, it will be set to the last index. So, for example, you can alway pull the last item from an array using: `array[NSUInteger_Max];`... not that you couldn't really do this using the `lastObject`, but it's there.
+
+The subscripting changes can cause some problems with the compiler warnings. Specifically, the compiler will complain if you try to set `nil` to a subscript.  You will probably want to disable that warning if you want use this fucntionality.
 
 ###Classes
 I've have a few classes I use frequently. Some of them are particularly useful:
