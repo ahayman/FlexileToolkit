@@ -7,6 +7,8 @@
 //
 
 #import "FlxTapGestureRecognizer.h"
+#import "UIGestureRecognizer+flxExtensions.h"
+#import "FlxToolkitFunctions.h"
 #import <UIKit/UIGestureRecognizerSubclass.h>
 
 #define PositionTolerance 0
@@ -110,7 +112,7 @@
     FlxLog(@"Tap Moved: %f", [NSDate timeIntervalSinceReferenceDate]);
     CGPoint point = [self avgPointForTouches:event.allTouches];
     if (touches.count != self.numberOfTouchesRequired ||
-        !CGRectContainsPoint(self.view.bounds, [RootController.view convertPoint:point toView:self.view]) ||
+        !CGRectContainsPoint(self.view.bounds, [self.view.window.rootViewController.view convertPoint:point toView:self.view]) ||
         (_positionTolerance > 0 && hypot(fabs(point.x - _initialPosition.x), fabs(point.y - _initialPosition.y)) > _positionTolerance) ||
         (_timeTolerance > 0 && [NSDate timeIntervalSinceReferenceDate] - _start > _timeTolerance))
     {
@@ -125,7 +127,7 @@
     });
     CGPoint point = [self avgPointForTouches:event.allTouches];
     if (touches.count != self.numberOfTouchesRequired ||
-        !CGRectContainsPoint(self.view.bounds, [RootController.view convertPoint:point toView:self.view]) ||
+        !CGRectContainsPoint(self.view.bounds, [self.view.window.rootViewController.view convertPoint:point toView:self.view]) ||
         (_positionTolerance > 0 && hypot(fabs(point.x - _initialPosition.x), fabs(point.y - _initialPosition.y)) > _positionTolerance) ||
         (_timeTolerance > 0 && [NSDate timeIntervalSinceReferenceDate] - _start > _timeTolerance))
     {

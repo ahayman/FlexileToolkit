@@ -6,7 +6,7 @@
 //
 //
 
-#import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 
 @interface FlxUIImagePicker : NSObject
 + (void) pickfromImageLibraryFromView:(UIView *)presentingView onSelection:(void (^)(UIImage *image))selectionBlock;

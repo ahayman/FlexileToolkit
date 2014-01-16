@@ -7,6 +7,7 @@
 //
 
 #import "FlxWeakTimer.h"
+#import "FlxToolkitFunctions.h"
 #include <objc/message.h>
 
 @implementation FlxWeakTimer{

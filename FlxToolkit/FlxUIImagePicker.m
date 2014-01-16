@@ -7,6 +7,9 @@
 //
 
 #import "FlxUIImagePicker.h"
+#import "FlxToolkitDefines.h"
+#import "FlxToolkitFunctions.h"
+#import "FlxAlert.h"
 #import <AssetsLibrary/AssetsLibrary.h>
 
 @interface FlxUIImagePicker () <UIImagePickerControllerDelegate, UINavigationControllerDelegate>
@@ -17,10 +20,11 @@
     UIImagePickerController *_iPicker;
     UIView *_presentingView;
     IDBlock _onSelection;
+    UIViewController *_rootController;
 }
 #pragma mark - Init Methods
 + (void) pickfromCameraFromView:(UIView *)presentingView onSelection:(void (^)(UIImage *))selectionBlock{
-    if (!presentingView || !selectionBlock) return;
+    if (!selectionBlock) return;
     FlxUIImagePicker *picker = [[FlxUIImagePicker alloc] initWithPresentingView:presentingView onSelection:selectionBlock];
     picker.lock = picker;
     [picker presentCamera];
@@ -38,6 +42,7 @@
     if (!presentingView) return nil;
     if (self = [super init]){
         _presentingView = presentingView;
+        _rootController = [[[UIApplication sharedApplication] delegate] window].rootViewController;
         if (onSelection){
             _onSelection = [onSelection copy];
         }
@@ -91,7 +96,7 @@
                 [_upc presentPopoverFromRect:_presentingView.bounds inView:_presentingView permittedArrowDirections:UIPopoverArrowDirectionAny animated:YES];
             }
         } else {
-            [RootController presentModalViewController:_iPicker animated:YES];
+            [_rootController presentViewController:_iPicker animated:YES completion:nil];
         }
     }];
 }
@@ -103,7 +108,7 @@
         _iPicker.showsCameraControls = YES;
         _iPicker.delegate = self;
         _iPicker.allowsEditing = YES;
-        [RootController presentModalViewController:_iPicker animated:YES];
+        [_rootController presentViewController:_iPicker animated:YES completion:nil];
     }];
 }
 #pragma mark - Properties
@@ -114,7 +119,7 @@
     if (_upc){
         [_upc dismissPopoverAnimated:YES];
     } else {
-        [RootController dismissModalViewControllerAnimated:YES];
+        [_rootController dismissViewControllerAnimated:YES completion:nil];
     }
     if (_onSelection){
         _onSelection(image);
@@ -126,7 +131,7 @@
     if (_upc){
         [_upc dismissPopoverAnimated:YES];
     } else {
-        [RootController dismissModalViewControllerAnimated:YES];
+        [_rootController dismissViewControllerAnimated:YES completion:nil];
     }
     
     self.lock = nil;

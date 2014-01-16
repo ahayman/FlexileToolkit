@@ -12,7 +12,6 @@
 #import "NSNumber+flxExtensions.h"
 #import "NSDecimalNumber+flxExtensions.h"
 #import "NSObject+flxExtensions.h"
-#import "UIView+flxExtensions.h"
 #import "UIColor+flxExtensions.h"
 #import "UIFont+flxExtensions.h"
 #import "UIImage+flxExtensions.h"

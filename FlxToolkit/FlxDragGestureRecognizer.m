@@ -7,6 +7,7 @@
 //
 
 #import "FlxDragGestureRecognizer.h"
+#import "UIGestureRecognizer+flxExtensions.h"
 #import <UIKit/UIGestureRecognizerSubclass.h>
 
 @implementation FlxDragGestureRecognizer{

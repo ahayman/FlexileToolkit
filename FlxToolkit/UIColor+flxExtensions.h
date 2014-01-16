@@ -6,7 +6,7 @@
 //  Copyright (c) 2011 __MyCompanyName__. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 
 #define Color(r, g, b, a) [UIColor colorWithRed:r green:g blue:b alpha:a]
 #define WColor(w, a) [UIColor colorWithWhite:w alpha:a]

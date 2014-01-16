@@ -7,6 +7,9 @@
 //
 
 #import "FlxAlert.h"
+#import "FlxToolkitExtensions.h"
+#import "FlxToolkitDefines.h"
+#import <UIKit/UIKit.h>
 
 @interface FlxAlert () <UIAlertViewDelegate>
 

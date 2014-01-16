@@ -162,7 +162,7 @@
 }
 #pragma mark - Overwritten methods
 - (NSString *) description{
-    NSUInteger count = 0;
+    int count = 0;
     NSMutableString *description = [NSMutableString stringWithString:@"Linked List: { \n"];
     for (id object in self){
         [description appendFormat:@"    %i : %@, \n", count, [object description]];

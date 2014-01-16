@@ -7,6 +7,8 @@
 //
 
 #import "UIColor+flxExtensions.h"
+#import "FlxToolkitFunctions.h"
+#import "NSString+flxExtensions.h"
 
 @implementation UIColor (flxExtensions)
 

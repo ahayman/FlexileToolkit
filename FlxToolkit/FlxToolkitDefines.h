@@ -5,7 +5,8 @@
 //  Created by Aaron Hayman on 1/15/14.
 //  Copyright (c) 2014 Aaron Hayman. All rights reserved.
 //
-
+#import <UIKit/UIKit.h>
+#import "FlxAlert.h"
 
 //Convenient Animation Durations
 #define VeryShortAnimationDuration .2f
@@ -46,35 +47,7 @@
 #define DeviceIsiPad (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad)
 
 
-//This allows you to define a nonfailing exception throw. For example, if you wanted to report the error to a service
-#ifndef NonFailingException
-    #define NonFailingException(x) GAIException(x)
-#endif
-/**
- This will execute the success block only if the condition succeeds
- **/
-#define FlxTrySucceed(expression, error, alert, onSuccess) \
-    if (!(expression)){ \
-        if (alert){ \
-            [FlxAlert displayAlertWithTitle:@"Woops!" message:$(@"Something went wrong! We're really sorry about that (and a little embarrassed).  Unless you've disabled it, the error will be sent to us can take a look. \n\nHere's the Error:\n   %@", error)]; \
-        } \
-        NSString *assertString = $(@"Try Failure.\n  Description: %@. \n  Failure: %s in %s on line %s:%d.", error, #expression, __PRETTY_FUNCTION__, __FILE__, __LINE__); \
-        NonFailingException(assertString); \
-    } else { \
-        onSuccess; \
-    }
-/**
- This will execute the failure block only if the condition fails
- **/
-#define FlxTry(expression, error, alert, onFailure) \
-    if (!(expression)){ \
-        if (alert){ \
-            [FlxAlert displayAlertWithTitle:@"Error!" message:$(@"Something went wrong! We're really sorry about that (and a little embarrassed).  Unless you've disabled it, the error will be sent to us can take a look. \n\nHere's the Error:\n   %@", error)]; \
-        } \
-        NSString *assertString = $(@"Try Failure.\n  Description: %@. \n  Failure: %s in %s on line %s:%d.", error, #expression, __PRETTY_FUNCTION__, __FILE__, __LINE__); \
-        NonFailingException(assertString); \
-        onFailure; \
-    }
+
 
 typedef void (^VoidBlock) (void);
 typedef void (^UIntBlock) (NSUInteger uInteger);
@@ -86,4 +59,17 @@ typedef void (^ArrayBlock) (NSArray *array);
 typedef void (^BoolBlock) (BOOL boolValue);
 typedef void (^FloatBlock) (CGFloat floatValue);
 typedef void (^ErrorBlock) (NSError *error);
-typedef void (^OnProgress) (CGFloat progress, NSString *title);
+typedef void (^ProgressBlock) (CGFloat progress, NSString *title);
+
+
+@protocol IndexedSubscripting <NSObject>
+- (id)objectAtIndexedSubscript:(NSUInteger)index;
+@optional
+- (void)setObject:(id)obj atIndexedSubscript:(NSUInteger)index;
+@end
+
+@protocol KeyedSubscripting <NSObject>
+- (id)objectForKeyedSubscript:(id)key;
+@optional
+- (void)setObject:(id)obj forKeyedSubscript:(id)key;
+@end

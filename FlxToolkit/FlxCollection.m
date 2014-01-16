@@ -8,6 +8,7 @@
 
 #import "FlxCollection.h"
 #import "FlxKVObserver.h"
+#import "FlxToolkitExtensions.h"
 
 @implementation FlxCollection{
     NSMutableDictionary *_collections;

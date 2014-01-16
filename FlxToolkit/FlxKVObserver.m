@@ -7,6 +7,7 @@
 //
 
 #import "FlxKVObserver.h"
+#import "FlxToolkitDefines.h"
 #include <objc/runtime.h>
 #include <objc/message.h>
 
@@ -53,7 +54,7 @@ static NSMutableDictionary * observerDict(id observer){
 }
 + (void) stopObservingObject:(id)object with:(id)observer{
     if (!object || !observer) return;
-    observerDict(observer)[@((NSInteger)object)] = nil;
+    [observerDict(observer) removeObjectForKey:@((NSInteger)object)];
 }
 #pragma mark - Block Observation
 + (void) observeKey:(SEL)key inObject:(id)object fromObserver:(__weak id)observer onChange:(void (^)(FlxKVObservation *))changeBlock{
@@ -62,7 +63,7 @@ static NSMutableDictionary * observerDict(id observer){
 }
 + (void) stopObserver:(id)observer fromObservingKey:(NSString *)key{
     if (!observer || !key) return;
-    observerDict(observer)[key] = nil;
+    [observerDict(observer) removeObjectForKey:key];
 }
 #pragma mark - ===============
 + (void) stopObserving:(id)observed{

@@ -7,6 +7,7 @@
 //
 
 #import "FlxOrderedCollection.h"
+#import "FlxToolkitExtensions.h"
 #import "FlxCollection.h"
 
 @implementation FlxOrderedCollection{
@@ -96,7 +97,7 @@
 - (void) removeObjectAtIndex:(NSUInteger)index{
     id object = _objects[index];
     if (!object) return;
-    _objects[index] = nil;
+    [_objects removeObjectAtIndex:index];
     [_collection removeObject:object];
 }
 - (void) removeAllObjects{

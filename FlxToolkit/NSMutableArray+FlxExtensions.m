@@ -7,6 +7,7 @@
 //
 
 #import "NSMutableArray+FlxExtensions.h"
+#import "FlxToolkitFunctions.h"
 
 @implementation NSArray (flxExtensions)
 + (NSArray *) arrayWithArray:(NSArray *)array typeCheck:(Class)classType{
@@ -51,13 +52,13 @@
     id movingObject = [self objectAtIndex:fromIndex];
 
     if (fromIndex < toIndex){
-        for (int i = fromIndex; i <= toIndex; i++){
+        for (NSUInteger i = fromIndex; i <= toIndex; i++){
             [self replaceObjectAtIndex:i withObject:(i == toIndex) ? movingObject : [self objectAtIndex:i + 1]];
         }
     } else {
         id cObject = nil;
         id prevObject = nil;
-        for (int i = toIndex; i <= fromIndex; i++){
+        for (NSUInteger i = toIndex; i <= fromIndex; i++){
             prevObject = cObject;
             cObject = [self objectAtIndex:i];
             [self replaceObjectAtIndex:i withObject:(i == toIndex) ? movingObject : prevObject];
@@ -73,7 +74,7 @@
     
     NSUInteger from;
     if (fromIndex < toIndex){
-        for (int i = fromIndex; i <= toIndex; i++){
+        for (NSUInteger i = fromIndex; i <= toIndex; i++){
             from = (i == toIndex) ? fromIndex : (i + 1);
             replacementObject = (i == toIndex ? movingObject : [self objectAtIndex:from]);
             [self replaceObjectAtIndex:i withObject:replacementObject];
@@ -81,7 +82,7 @@
         }
     } else {
         id cObject = nil, prevObject;
-        for (int i = toIndex; i <= fromIndex; i++){
+        for (NSUInteger i = toIndex; i <= fromIndex; i++){
             prevObject = cObject;
             cObject = [self objectAtIndex:i];
             replacementObject = (i == toIndex) ? movingObject : prevObject;
@@ -120,8 +121,8 @@
 - (void) swap:(NSUInteger)index with:(NSUInteger)index2{
     FlxTry(index < self.count, @"Tried to swap from an index that's out of bounds.", NO, { return; })
     FlxTry(index2 < self.count, @"Tried to swap to an index that's out of bounds.", NO, { return; })
-    id object = self[index2];
-    [self replaceObjectAtIndex:index2 withObject:self[index]];
+    id object = [self objectAtIndex:index2];
+    [self replaceObjectAtIndex:index2 withObject:[self objectAtIndex:index]];
     [self replaceObjectAtIndex:index withObject:object];
 }
 - (void)    push:(id)object{

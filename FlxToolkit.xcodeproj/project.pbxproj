@@ -6,10 +6,82 @@
 	objectVersion = 46;
 	objects = {
 
+/* Begin PBXAggregateTarget section */
+		93533523188732EB005462DF /* UniversalLib */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = 93533524188732EC005462DF /* Build configuration list for PBXAggregateTarget "UniversalLib" */;
+			buildPhases = (
+				93F051C51887343100286167 /* ShellScript */,
+			);
+			dependencies = (
+			);
+			name = UniversalLib;
+			productName = UniversalLib;
+		};
+/* End PBXAggregateTarget section */
+
 /* Begin PBXBuildFile section */
+		935334E118870BFE005462DF /* FlxAlert.m in Sources */ = {isa = PBXBuildFile; fileRef = 935334C318870BFE005462DF /* FlxAlert.m */; };
+		935334E218870BFE005462DF /* FlxAlert.m in Sources */ = {isa = PBXBuildFile; fileRef = 935334C318870BFE005462DF /* FlxAlert.m */; };
+		935334E318870BFE005462DF /* FlxCollection.m in Sources */ = {isa = PBXBuildFile; fileRef = 935334C418870BFE005462DF /* FlxCollection.m */; };
+		935334E418870BFE005462DF /* FlxCollection.m in Sources */ = {isa = PBXBuildFile; fileRef = 935334C418870BFE005462DF /* FlxCollection.m */; };
+		935334E518870BFE005462DF /* FlxDragGestureRecognizer.m in Sources */ = {isa = PBXBuildFile; fileRef = 935334C518870BFE005462DF /* FlxDragGestureRecognizer.m */; };
+		935334E618870BFE005462DF /* FlxDragGestureRecognizer.m in Sources */ = {isa = PBXBuildFile; fileRef = 935334C518870BFE005462DF /* FlxDragGestureRecognizer.m */; };
+		935334E718870BFE005462DF /* FlxKVObserver.m in Sources */ = {isa = PBXBuildFile; fileRef = 935334C618870BFE005462DF /* FlxKVObserver.m */; };
+		935334E818870BFE005462DF /* FlxKVObserver.m in Sources */ = {isa = PBXBuildFile; fileRef = 935334C618870BFE005462DF /* FlxKVObserver.m */; };
+		935334E918870BFE005462DF /* FlxLinkedList.m in Sources */ = {isa = PBXBuildFile; fileRef = 935334C718870BFE005462DF /* FlxLinkedList.m */; };
+		935334EA18870BFE005462DF /* FlxLinkedList.m in Sources */ = {isa = PBXBuildFile; fileRef = 935334C718870BFE005462DF /* FlxLinkedList.m */; };
+		935334EB18870BFE005462DF /* FlxlPinchGestureRecognizer.m in Sources */ = {isa = PBXBuildFile; fileRef = 935334C818870BFE005462DF /* FlxlPinchGestureRecognizer.m */; };
+		935334EC18870BFE005462DF /* FlxlPinchGestureRecognizer.m in Sources */ = {isa = PBXBuildFile; fileRef = 935334C818870BFE005462DF /* FlxlPinchGestureRecognizer.m */; };
+		935334ED18870BFE005462DF /* FlxOrderedCollection.m in Sources */ = {isa = PBXBuildFile; fileRef = 935334C918870BFE005462DF /* FlxOrderedCollection.m */; };
+		935334EE18870BFE005462DF /* FlxOrderedCollection.m in Sources */ = {isa = PBXBuildFile; fileRef = 935334C918870BFE005462DF /* FlxOrderedCollection.m */; };
+		935334EF18870BFE005462DF /* FlxReferencedExecution.m in Sources */ = {isa = PBXBuildFile; fileRef = 935334CA18870BFE005462DF /* FlxReferencedExecution.m */; };
+		935334F018870BFE005462DF /* FlxReferencedExecution.m in Sources */ = {isa = PBXBuildFile; fileRef = 935334CA18870BFE005462DF /* FlxReferencedExecution.m */; };
+		935334F118870BFE005462DF /* FlxTapGestureRecognizer.m in Sources */ = {isa = PBXBuildFile; fileRef = 935334CB18870BFE005462DF /* FlxTapGestureRecognizer.m */; };
+		935334F218870BFE005462DF /* FlxTapGestureRecognizer.m in Sources */ = {isa = PBXBuildFile; fileRef = 935334CB18870BFE005462DF /* FlxTapGestureRecognizer.m */; };
+		935334F318870BFE005462DF /* FlxToolkit.m in Sources */ = {isa = PBXBuildFile; fileRef = 935334CC18870BFE005462DF /* FlxToolkit.m */; };
+		935334F418870BFE005462DF /* FlxToolkit.m in Sources */ = {isa = PBXBuildFile; fileRef = 935334CC18870BFE005462DF /* FlxToolkit.m */; };
+		935334F518870BFE005462DF /* FlxUIImagePicker.m in Sources */ = {isa = PBXBuildFile; fileRef = 935334CD18870BFE005462DF /* FlxUIImagePicker.m */; };
+		935334F618870BFE005462DF /* FlxUIImagePicker.m in Sources */ = {isa = PBXBuildFile; fileRef = 935334CD18870BFE005462DF /* FlxUIImagePicker.m */; };
+		935334F718870BFE005462DF /* FlxWeakContainer.m in Sources */ = {isa = PBXBuildFile; fileRef = 935334CE18870BFE005462DF /* FlxWeakContainer.m */; };
+		935334F818870BFE005462DF /* FlxWeakContainer.m in Sources */ = {isa = PBXBuildFile; fileRef = 935334CE18870BFE005462DF /* FlxWeakContainer.m */; };
+		935334F918870BFE005462DF /* FlxWeakTimer.m in Sources */ = {isa = PBXBuildFile; fileRef = 935334CF18870BFE005462DF /* FlxWeakTimer.m */; };
+		935334FA18870BFE005462DF /* FlxWeakTimer.m in Sources */ = {isa = PBXBuildFile; fileRef = 935334CF18870BFE005462DF /* FlxWeakTimer.m */; };
+		935334FB18870BFE005462DF /* NSDecimalNumber+flxExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 935334D018870BFE005462DF /* NSDecimalNumber+flxExtensions.m */; };
+		935334FC18870BFE005462DF /* NSDecimalNumber+flxExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 935334D018870BFE005462DF /* NSDecimalNumber+flxExtensions.m */; };
+		935334FD18870BFE005462DF /* NSDictionary+flxExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 935334D118870BFE005462DF /* NSDictionary+flxExtensions.m */; };
+		935334FE18870BFE005462DF /* NSDictionary+flxExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 935334D118870BFE005462DF /* NSDictionary+flxExtensions.m */; };
+		935334FF18870BFE005462DF /* NSJSONSerialization+flxExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 935334D218870BFE005462DF /* NSJSONSerialization+flxExtensions.m */; };
+		9353350018870BFE005462DF /* NSJSONSerialization+flxExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 935334D218870BFE005462DF /* NSJSONSerialization+flxExtensions.m */; };
+		9353350118870BFE005462DF /* NSMutableArray+FlxExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 935334D318870BFE005462DF /* NSMutableArray+FlxExtensions.m */; };
+		9353350218870BFE005462DF /* NSMutableArray+FlxExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 935334D318870BFE005462DF /* NSMutableArray+FlxExtensions.m */; };
+		9353350318870BFE005462DF /* NSMutableURLRequest+flxExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 935334D418870BFE005462DF /* NSMutableURLRequest+flxExtensions.m */; };
+		9353350418870BFE005462DF /* NSMutableURLRequest+flxExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 935334D418870BFE005462DF /* NSMutableURLRequest+flxExtensions.m */; };
+		9353350518870BFE005462DF /* NSNumber+flxExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 935334D518870BFE005462DF /* NSNumber+flxExtensions.m */; };
+		9353350618870BFE005462DF /* NSNumber+flxExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 935334D518870BFE005462DF /* NSNumber+flxExtensions.m */; };
+		9353350718870BFE005462DF /* NSNumberFormatter+flxExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 935334D618870BFE005462DF /* NSNumberFormatter+flxExtensions.m */; };
+		9353350818870BFE005462DF /* NSNumberFormatter+flxExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 935334D618870BFE005462DF /* NSNumberFormatter+flxExtensions.m */; };
+		9353350918870BFE005462DF /* NSObject+flxExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 935334D718870BFE005462DF /* NSObject+flxExtensions.m */; };
+		9353350A18870BFE005462DF /* NSObject+flxExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 935334D718870BFE005462DF /* NSObject+flxExtensions.m */; };
+		9353350B18870BFE005462DF /* NSString+flxExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 935334D818870BFE005462DF /* NSString+flxExtensions.m */; };
+		9353350C18870BFE005462DF /* NSString+flxExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 935334D818870BFE005462DF /* NSString+flxExtensions.m */; };
+		9353350D18870BFE005462DF /* NSURL+flxExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 935334D918870BFE005462DF /* NSURL+flxExtensions.m */; };
+		9353350E18870BFE005462DF /* NSURL+flxExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 935334D918870BFE005462DF /* NSURL+flxExtensions.m */; };
+		9353350F18870BFE005462DF /* UIColor+flxExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 935334DA18870BFE005462DF /* UIColor+flxExtensions.m */; };
+		9353351018870BFE005462DF /* UIColor+flxExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 935334DA18870BFE005462DF /* UIColor+flxExtensions.m */; };
+		9353351118870BFE005462DF /* UIFont+flxExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 935334DB18870BFE005462DF /* UIFont+flxExtensions.m */; };
+		9353351218870BFE005462DF /* UIFont+flxExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 935334DB18870BFE005462DF /* UIFont+flxExtensions.m */; };
+		9353351318870BFE005462DF /* UIGestureRecognizer+flxExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 935334DC18870BFE005462DF /* UIGestureRecognizer+flxExtensions.m */; };
+		9353351418870BFE005462DF /* UIGestureRecognizer+flxExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 935334DC18870BFE005462DF /* UIGestureRecognizer+flxExtensions.m */; };
+		9353351518870BFE005462DF /* UIImage+flxExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 935334DD18870BFE005462DF /* UIImage+flxExtensions.m */; };
+		9353351618870BFE005462DF /* UIImage+flxExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 935334DD18870BFE005462DF /* UIImage+flxExtensions.m */; };
+		9353351718870BFE005462DF /* UILabel+flxExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 935334DE18870BFE005462DF /* UILabel+flxExtensions.m */; };
+		9353351818870BFE005462DF /* UILabel+flxExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 935334DE18870BFE005462DF /* UILabel+flxExtensions.m */; };
+		9353351918870BFE005462DF /* UIScrollView+flxExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 935334DF18870BFE005462DF /* UIScrollView+flxExtensions.m */; };
+		9353351A18870BFE005462DF /* UIScrollView+flxExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 935334DF18870BFE005462DF /* UIScrollView+flxExtensions.m */; };
+		9353352118870F69005462DF /* FlxToolkitFunctions.m in Sources */ = {isa = PBXBuildFile; fileRef = 9353352018870F69005462DF /* FlxToolkitFunctions.m */; };
+		9353352218870F69005462DF /* FlxToolkitFunctions.m in Sources */ = {isa = PBXBuildFile; fileRef = 9353352018870F69005462DF /* FlxToolkitFunctions.m */; };
 		93D171D11885ABF60028FF0F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 93D171D01885ABF60028FF0F /* Foundation.framework */; };
-		93D171D61885ABF60028FF0F /* FlxToolkit.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 93D171D51885ABF60028FF0F /* FlxToolkit.h */; };
-		93D171D81885ABF60028FF0F /* FlxToolkit.m in Sources */ = {isa = PBXBuildFile; fileRef = 93D171D71885ABF60028FF0F /* FlxToolkit.m */; };
 		93D171DF1885ABF70028FF0F /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 93D171DE1885ABF70028FF0F /* XCTest.framework */; };
 		93D171E01885ABF70028FF0F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 93D171D01885ABF60028FF0F /* Foundation.framework */; };
 		93D171E21885ABF70028FF0F /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 93D171E11885ABF70028FF0F /* UIKit.framework */; };
@@ -35,18 +107,77 @@
 			dstPath = "include/$(PRODUCT_NAME)";
 			dstSubfolderSpec = 16;
 			files = (
-				93D171D61885ABF60028FF0F /* FlxToolkit.h in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		935334A518870BFE005462DF /* FlxAlert.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlxAlert.h; sourceTree = "<group>"; };
+		935334A618870BFE005462DF /* FlxCollection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlxCollection.h; sourceTree = "<group>"; };
+		935334A718870BFE005462DF /* FlxDragGestureRecognizer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlxDragGestureRecognizer.h; sourceTree = "<group>"; };
+		935334A818870BFE005462DF /* FlxKVObserver.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlxKVObserver.h; sourceTree = "<group>"; };
+		935334A918870BFE005462DF /* FlxLinkedList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlxLinkedList.h; sourceTree = "<group>"; };
+		935334AA18870BFE005462DF /* FlxlPinchGestureRecognizer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlxlPinchGestureRecognizer.h; sourceTree = "<group>"; };
+		935334AB18870BFE005462DF /* FlxOrderedCollection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlxOrderedCollection.h; sourceTree = "<group>"; };
+		935334AC18870BFE005462DF /* FlxReferencedExecution.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlxReferencedExecution.h; sourceTree = "<group>"; };
+		935334AD18870BFE005462DF /* FlxTapGestureRecognizer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlxTapGestureRecognizer.h; sourceTree = "<group>"; };
+		935334AE18870BFE005462DF /* FlxToolkit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlxToolkit.h; sourceTree = "<group>"; };
+		935334AF18870BFE005462DF /* FlxUIImagePicker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlxUIImagePicker.h; sourceTree = "<group>"; };
+		935334B018870BFE005462DF /* FlxWeakContainer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlxWeakContainer.h; sourceTree = "<group>"; };
+		935334B118870BFE005462DF /* FlxWeakTimer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlxWeakTimer.h; sourceTree = "<group>"; };
+		935334B218870BFE005462DF /* NSDecimalNumber+flxExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDecimalNumber+flxExtensions.h"; sourceTree = "<group>"; };
+		935334B318870BFE005462DF /* NSDictionary+flxExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+flxExtensions.h"; sourceTree = "<group>"; };
+		935334B418870BFE005462DF /* NSJSONSerialization+flxExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSJSONSerialization+flxExtensions.h"; sourceTree = "<group>"; };
+		935334B518870BFE005462DF /* NSMutableArray+FlxExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableArray+FlxExtensions.h"; sourceTree = "<group>"; };
+		935334B618870BFE005462DF /* NSMutableURLRequest+flxExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableURLRequest+flxExtensions.h"; sourceTree = "<group>"; };
+		935334B718870BFE005462DF /* NSNumber+flxExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSNumber+flxExtensions.h"; sourceTree = "<group>"; };
+		935334B818870BFE005462DF /* NSNumberFormatter+flxExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSNumberFormatter+flxExtensions.h"; sourceTree = "<group>"; };
+		935334B918870BFE005462DF /* NSObject+flxExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+flxExtensions.h"; sourceTree = "<group>"; };
+		935334BA18870BFE005462DF /* NSString+flxExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+flxExtensions.h"; sourceTree = "<group>"; };
+		935334BB18870BFE005462DF /* NSURL+flxExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSURL+flxExtensions.h"; sourceTree = "<group>"; };
+		935334BC18870BFE005462DF /* UIColor+flxExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+flxExtensions.h"; sourceTree = "<group>"; };
+		935334BD18870BFE005462DF /* UIFont+flxExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIFont+flxExtensions.h"; sourceTree = "<group>"; };
+		935334BE18870BFE005462DF /* UIGestureRecognizer+flxExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIGestureRecognizer+flxExtensions.h"; sourceTree = "<group>"; };
+		935334BF18870BFE005462DF /* UIImage+flxExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+flxExtensions.h"; sourceTree = "<group>"; };
+		935334C018870BFE005462DF /* UILabel+flxExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UILabel+flxExtensions.h"; sourceTree = "<group>"; };
+		935334C118870BFE005462DF /* UIScrollView+flxExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+flxExtensions.h"; sourceTree = "<group>"; };
+		935334C318870BFE005462DF /* FlxAlert.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FlxAlert.m; sourceTree = "<group>"; };
+		935334C418870BFE005462DF /* FlxCollection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FlxCollection.m; sourceTree = "<group>"; };
+		935334C518870BFE005462DF /* FlxDragGestureRecognizer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FlxDragGestureRecognizer.m; sourceTree = "<group>"; };
+		935334C618870BFE005462DF /* FlxKVObserver.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FlxKVObserver.m; sourceTree = "<group>"; };
+		935334C718870BFE005462DF /* FlxLinkedList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FlxLinkedList.m; sourceTree = "<group>"; };
+		935334C818870BFE005462DF /* FlxlPinchGestureRecognizer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FlxlPinchGestureRecognizer.m; sourceTree = "<group>"; };
+		935334C918870BFE005462DF /* FlxOrderedCollection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FlxOrderedCollection.m; sourceTree = "<group>"; };
+		935334CA18870BFE005462DF /* FlxReferencedExecution.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FlxReferencedExecution.m; sourceTree = "<group>"; };
+		935334CB18870BFE005462DF /* FlxTapGestureRecognizer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FlxTapGestureRecognizer.m; sourceTree = "<group>"; };
+		935334CC18870BFE005462DF /* FlxToolkit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FlxToolkit.m; sourceTree = "<group>"; };
+		935334CD18870BFE005462DF /* FlxUIImagePicker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FlxUIImagePicker.m; sourceTree = "<group>"; };
+		935334CE18870BFE005462DF /* FlxWeakContainer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FlxWeakContainer.m; sourceTree = "<group>"; };
+		935334CF18870BFE005462DF /* FlxWeakTimer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FlxWeakTimer.m; sourceTree = "<group>"; };
+		935334D018870BFE005462DF /* NSDecimalNumber+flxExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDecimalNumber+flxExtensions.m"; sourceTree = "<group>"; };
+		935334D118870BFE005462DF /* NSDictionary+flxExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+flxExtensions.m"; sourceTree = "<group>"; };
+		935334D218870BFE005462DF /* NSJSONSerialization+flxExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSJSONSerialization+flxExtensions.m"; sourceTree = "<group>"; };
+		935334D318870BFE005462DF /* NSMutableArray+FlxExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableArray+FlxExtensions.m"; sourceTree = "<group>"; };
+		935334D418870BFE005462DF /* NSMutableURLRequest+flxExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableURLRequest+flxExtensions.m"; sourceTree = "<group>"; };
+		935334D518870BFE005462DF /* NSNumber+flxExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSNumber+flxExtensions.m"; sourceTree = "<group>"; };
+		935334D618870BFE005462DF /* NSNumberFormatter+flxExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSNumberFormatter+flxExtensions.m"; sourceTree = "<group>"; };
+		935334D718870BFE005462DF /* NSObject+flxExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+flxExtensions.m"; sourceTree = "<group>"; };
+		935334D818870BFE005462DF /* NSString+flxExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+flxExtensions.m"; sourceTree = "<group>"; };
+		935334D918870BFE005462DF /* NSURL+flxExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSURL+flxExtensions.m"; sourceTree = "<group>"; };
+		935334DA18870BFE005462DF /* UIColor+flxExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+flxExtensions.m"; sourceTree = "<group>"; };
+		935334DB18870BFE005462DF /* UIFont+flxExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIFont+flxExtensions.m"; sourceTree = "<group>"; };
+		935334DC18870BFE005462DF /* UIGestureRecognizer+flxExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIGestureRecognizer+flxExtensions.m"; sourceTree = "<group>"; };
+		935334DD18870BFE005462DF /* UIImage+flxExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+flxExtensions.m"; sourceTree = "<group>"; };
+		935334DE18870BFE005462DF /* UILabel+flxExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UILabel+flxExtensions.m"; sourceTree = "<group>"; };
+		935334DF18870BFE005462DF /* UIScrollView+flxExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+flxExtensions.m"; sourceTree = "<group>"; };
+		9353351D18870CD6005462DF /* FlxToolkitExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlxToolkitExtensions.h; sourceTree = "<group>"; };
+		9353351E18870E2D005462DF /* FlxToolkitDefines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlxToolkitDefines.h; sourceTree = "<group>"; };
+		9353351F18870F69005462DF /* FlxToolkitFunctions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlxToolkitFunctions.h; sourceTree = "<group>"; };
+		9353352018870F69005462DF /* FlxToolkitFunctions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FlxToolkitFunctions.m; sourceTree = "<group>"; };
 		93D171CD1885ABF60028FF0F /* libFlxToolkit.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libFlxToolkit.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		93D171D01885ABF60028FF0F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		93D171D41885ABF60028FF0F /* FlxToolkit-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "FlxToolkit-Prefix.pch"; sourceTree = "<group>"; };
-		93D171D51885ABF60028FF0F /* FlxToolkit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FlxToolkit.h; sourceTree = "<group>"; };
-		93D171D71885ABF60028FF0F /* FlxToolkit.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FlxToolkit.m; sourceTree = "<group>"; };
 		93D171DD1885ABF70028FF0F /* FlxToolkitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FlxToolkitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		93D171DE1885ABF70028FF0F /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		93D171E11885ABF70028FF0F /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
@@ -110,8 +241,68 @@
 		93D171D21885ABF60028FF0F /* FlxToolkit */ = {
 			isa = PBXGroup;
 			children = (
-				93D171D51885ABF60028FF0F /* FlxToolkit.h */,
-				93D171D71885ABF60028FF0F /* FlxToolkit.m */,
+				935334AE18870BFE005462DF /* FlxToolkit.h */,
+				935334CC18870BFE005462DF /* FlxToolkit.m */,
+				9353351D18870CD6005462DF /* FlxToolkitExtensions.h */,
+				9353351E18870E2D005462DF /* FlxToolkitDefines.h */,
+				9353351F18870F69005462DF /* FlxToolkitFunctions.h */,
+				9353352018870F69005462DF /* FlxToolkitFunctions.m */,
+				935334A518870BFE005462DF /* FlxAlert.h */,
+				935334C318870BFE005462DF /* FlxAlert.m */,
+				935334A618870BFE005462DF /* FlxCollection.h */,
+				935334C418870BFE005462DF /* FlxCollection.m */,
+				935334A718870BFE005462DF /* FlxDragGestureRecognizer.h */,
+				935334C518870BFE005462DF /* FlxDragGestureRecognizer.m */,
+				935334A818870BFE005462DF /* FlxKVObserver.h */,
+				935334C618870BFE005462DF /* FlxKVObserver.m */,
+				935334A918870BFE005462DF /* FlxLinkedList.h */,
+				935334C718870BFE005462DF /* FlxLinkedList.m */,
+				935334AA18870BFE005462DF /* FlxlPinchGestureRecognizer.h */,
+				935334C818870BFE005462DF /* FlxlPinchGestureRecognizer.m */,
+				935334AB18870BFE005462DF /* FlxOrderedCollection.h */,
+				935334C918870BFE005462DF /* FlxOrderedCollection.m */,
+				935334AC18870BFE005462DF /* FlxReferencedExecution.h */,
+				935334CA18870BFE005462DF /* FlxReferencedExecution.m */,
+				935334AD18870BFE005462DF /* FlxTapGestureRecognizer.h */,
+				935334CB18870BFE005462DF /* FlxTapGestureRecognizer.m */,
+				935334AF18870BFE005462DF /* FlxUIImagePicker.h */,
+				935334CD18870BFE005462DF /* FlxUIImagePicker.m */,
+				935334B018870BFE005462DF /* FlxWeakContainer.h */,
+				935334CE18870BFE005462DF /* FlxWeakContainer.m */,
+				935334B118870BFE005462DF /* FlxWeakTimer.h */,
+				935334CF18870BFE005462DF /* FlxWeakTimer.m */,
+				935334B218870BFE005462DF /* NSDecimalNumber+flxExtensions.h */,
+				935334D018870BFE005462DF /* NSDecimalNumber+flxExtensions.m */,
+				935334B318870BFE005462DF /* NSDictionary+flxExtensions.h */,
+				935334D118870BFE005462DF /* NSDictionary+flxExtensions.m */,
+				935334B418870BFE005462DF /* NSJSONSerialization+flxExtensions.h */,
+				935334D218870BFE005462DF /* NSJSONSerialization+flxExtensions.m */,
+				935334B518870BFE005462DF /* NSMutableArray+FlxExtensions.h */,
+				935334D318870BFE005462DF /* NSMutableArray+FlxExtensions.m */,
+				935334B618870BFE005462DF /* NSMutableURLRequest+flxExtensions.h */,
+				935334D418870BFE005462DF /* NSMutableURLRequest+flxExtensions.m */,
+				935334B718870BFE005462DF /* NSNumber+flxExtensions.h */,
+				935334D518870BFE005462DF /* NSNumber+flxExtensions.m */,
+				935334B818870BFE005462DF /* NSNumberFormatter+flxExtensions.h */,
+				935334D618870BFE005462DF /* NSNumberFormatter+flxExtensions.m */,
+				935334B918870BFE005462DF /* NSObject+flxExtensions.h */,
+				935334D718870BFE005462DF /* NSObject+flxExtensions.m */,
+				935334BA18870BFE005462DF /* NSString+flxExtensions.h */,
+				935334D818870BFE005462DF /* NSString+flxExtensions.m */,
+				935334BB18870BFE005462DF /* NSURL+flxExtensions.h */,
+				935334D918870BFE005462DF /* NSURL+flxExtensions.m */,
+				935334BC18870BFE005462DF /* UIColor+flxExtensions.h */,
+				935334DA18870BFE005462DF /* UIColor+flxExtensions.m */,
+				935334BD18870BFE005462DF /* UIFont+flxExtensions.h */,
+				935334DB18870BFE005462DF /* UIFont+flxExtensions.m */,
+				935334BE18870BFE005462DF /* UIGestureRecognizer+flxExtensions.h */,
+				935334DC18870BFE005462DF /* UIGestureRecognizer+flxExtensions.m */,
+				935334BF18870BFE005462DF /* UIImage+flxExtensions.h */,
+				935334DD18870BFE005462DF /* UIImage+flxExtensions.m */,
+				935334C018870BFE005462DF /* UILabel+flxExtensions.h */,
+				935334DE18870BFE005462DF /* UILabel+flxExtensions.m */,
+				935334C118870BFE005462DF /* UIScrollView+flxExtensions.h */,
+				935334DF18870BFE005462DF /* UIScrollView+flxExtensions.m */,
 				93D171D31885ABF60028FF0F /* Supporting Files */,
 			);
 			path = FlxToolkit;
@@ -204,6 +395,7 @@
 			targets = (
 				93D171CC1885ABF60028FF0F /* FlxToolkit */,
 				93D171DC1885ABF70028FF0F /* FlxToolkitTests */,
+				93533523188732EB005462DF /* UniversalLib */,
 			);
 		};
 /* End PBXProject section */
@@ -219,12 +411,57 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		93F051C51887343100286167 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# define output folder environment variable\nUNIVERSAL_OUTPUTFOLDER=${BUILD_DIR}/${CONFIGURATION}-universal\n\n# Step 1. Build Device and Simulator versions\nxcodebuild -target FlxToolkit ONLY_ACTIVE_ARCH=NO -configuration ${CONFIGURATION} -sdk iphoneos  BUILD_DIR=\"${BUILD_DIR}\" BUILD_ROOT=\"${BUILD_ROOT}\"\nxcodebuild -target FlxToolkit -configuration ${CONFIGURATION} -sdk iphonesimulator -arch i386 BUILD_DIR=\"${BUILD_DIR}\" BUILD_ROOT=\"${BUILD_ROOT}\"\n\n# make sure the output directory exists\nmkdir -p \"${UNIVERSAL_OUTPUTFOLDER}\"\n\n# Step 2. Create universal binary file using lipo\nlipo -create -output \"${UNIVERSAL_OUTPUTFOLDER}/lib${PROJECT_NAME}.a\" \"${BUILD_DIR}/${CONFIGURATION}-iphoneos/lib${PROJECT_NAME}.a\" \"${BUILD_DIR}/${CONFIGURATION}-iphonesimulator/lib${PROJECT_NAME}.a\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		93D171C91885ABF60028FF0F /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				93D171D81885ABF60028FF0F /* FlxToolkit.m in Sources */,
+				935334E318870BFE005462DF /* FlxCollection.m in Sources */,
+				935334E718870BFE005462DF /* FlxKVObserver.m in Sources */,
+				9353351918870BFE005462DF /* UIScrollView+flxExtensions.m in Sources */,
+				935334F718870BFE005462DF /* FlxWeakContainer.m in Sources */,
+				9353350D18870BFE005462DF /* NSURL+flxExtensions.m in Sources */,
+				9353351518870BFE005462DF /* UIImage+flxExtensions.m in Sources */,
+				935334FD18870BFE005462DF /* NSDictionary+flxExtensions.m in Sources */,
+				9353352118870F69005462DF /* FlxToolkitFunctions.m in Sources */,
+				9353350318870BFE005462DF /* NSMutableURLRequest+flxExtensions.m in Sources */,
+				935334F118870BFE005462DF /* FlxTapGestureRecognizer.m in Sources */,
+				935334F518870BFE005462DF /* FlxUIImagePicker.m in Sources */,
+				9353351718870BFE005462DF /* UILabel+flxExtensions.m in Sources */,
+				9353350918870BFE005462DF /* NSObject+flxExtensions.m in Sources */,
+				935334E118870BFE005462DF /* FlxAlert.m in Sources */,
+				9353350118870BFE005462DF /* NSMutableArray+FlxExtensions.m in Sources */,
+				9353350718870BFE005462DF /* NSNumberFormatter+flxExtensions.m in Sources */,
+				9353351118870BFE005462DF /* UIFont+flxExtensions.m in Sources */,
+				935334ED18870BFE005462DF /* FlxOrderedCollection.m in Sources */,
+				935334F918870BFE005462DF /* FlxWeakTimer.m in Sources */,
+				935334FB18870BFE005462DF /* NSDecimalNumber+flxExtensions.m in Sources */,
+				9353350518870BFE005462DF /* NSNumber+flxExtensions.m in Sources */,
+				935334F318870BFE005462DF /* FlxToolkit.m in Sources */,
+				9353351318870BFE005462DF /* UIGestureRecognizer+flxExtensions.m in Sources */,
+				935334EF18870BFE005462DF /* FlxReferencedExecution.m in Sources */,
+				935334FF18870BFE005462DF /* NSJSONSerialization+flxExtensions.m in Sources */,
+				9353350B18870BFE005462DF /* NSString+flxExtensions.m in Sources */,
+				9353350F18870BFE005462DF /* UIColor+flxExtensions.m in Sources */,
+				935334E518870BFE005462DF /* FlxDragGestureRecognizer.m in Sources */,
+				935334EB18870BFE005462DF /* FlxlPinchGestureRecognizer.m in Sources */,
+				935334E918870BFE005462DF /* FlxLinkedList.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -232,7 +469,37 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				935334E818870BFE005462DF /* FlxKVObserver.m in Sources */,
+				9353351218870BFE005462DF /* UIFont+flxExtensions.m in Sources */,
+				935334E618870BFE005462DF /* FlxDragGestureRecognizer.m in Sources */,
+				9353350018870BFE005462DF /* NSJSONSerialization+flxExtensions.m in Sources */,
+				935334F218870BFE005462DF /* FlxTapGestureRecognizer.m in Sources */,
+				935334FE18870BFE005462DF /* NSDictionary+flxExtensions.m in Sources */,
+				9353351418870BFE005462DF /* UIGestureRecognizer+flxExtensions.m in Sources */,
+				935334FC18870BFE005462DF /* NSDecimalNumber+flxExtensions.m in Sources */,
+				9353350218870BFE005462DF /* NSMutableArray+FlxExtensions.m in Sources */,
+				935334E418870BFE005462DF /* FlxCollection.m in Sources */,
+				935334F418870BFE005462DF /* FlxToolkit.m in Sources */,
 				93D171ED1885ABF70028FF0F /* FlxToolkitTests.m in Sources */,
+				9353351618870BFE005462DF /* UIImage+flxExtensions.m in Sources */,
+				935334FA18870BFE005462DF /* FlxWeakTimer.m in Sources */,
+				9353351A18870BFE005462DF /* UIScrollView+flxExtensions.m in Sources */,
+				935334EE18870BFE005462DF /* FlxOrderedCollection.m in Sources */,
+				935334E218870BFE005462DF /* FlxAlert.m in Sources */,
+				935334EC18870BFE005462DF /* FlxlPinchGestureRecognizer.m in Sources */,
+				9353350A18870BFE005462DF /* NSObject+flxExtensions.m in Sources */,
+				935334EA18870BFE005462DF /* FlxLinkedList.m in Sources */,
+				9353351018870BFE005462DF /* UIColor+flxExtensions.m in Sources */,
+				935334F618870BFE005462DF /* FlxUIImagePicker.m in Sources */,
+				9353350E18870BFE005462DF /* NSURL+flxExtensions.m in Sources */,
+				9353351818870BFE005462DF /* UILabel+flxExtensions.m in Sources */,
+				9353352218870F69005462DF /* FlxToolkitFunctions.m in Sources */,
+				935334F018870BFE005462DF /* FlxReferencedExecution.m in Sources */,
+				935334F818870BFE005462DF /* FlxWeakContainer.m in Sources */,
+				9353350618870BFE005462DF /* NSNumber+flxExtensions.m in Sources */,
+				9353350818870BFE005462DF /* NSNumberFormatter+flxExtensions.m in Sources */,
+				9353350C18870BFE005462DF /* NSString+flxExtensions.m in Sources */,
+				9353350418870BFE005462DF /* NSMutableURLRequest+flxExtensions.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -258,11 +525,25 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		93533525188732EC005462DF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		93533526188732EC005462DF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
 		93D171EE1885ABF70028FF0F /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				ARCHS = "$(ARCHS_STANDARD)";
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
@@ -290,7 +571,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 			};
@@ -300,7 +581,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				ARCHS = "$(ARCHS_STANDARD)";
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
@@ -322,7 +603,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};
@@ -393,6 +674,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		93533524188732EC005462DF /* Build configuration list for PBXAggregateTarget "UniversalLib" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				93533525188732EC005462DF /* Debug */,
+				93533526188732EC005462DF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		93D171C81885ABF60028FF0F /* Build configuration list for PBXProject "FlxToolkit" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -409,6 +699,7 @@
 				93D171F21885ABF70028FF0F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		93D171F31885ABF70028FF0F /* Build configuration list for PBXNativeTarget "FlxToolkitTests" */ = {
 			isa = XCConfigurationList;
@@ -417,6 +708,7 @@
 				93D171F51885ABF70028FF0F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

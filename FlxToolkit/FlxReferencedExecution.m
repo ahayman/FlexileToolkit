@@ -7,6 +7,7 @@
 //
 
 #import "FlxReferencedExecution.h"
+#import "FlxToolkitDefines.h"
 #import <objc/message.h>
 
 @implementation FlxReferencedExecution{

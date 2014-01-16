@@ -7,6 +7,7 @@
 //
 
 #import "UIImage+flxExtensions.h"
+#import "FlxToolkitFunctions.h"
 
 @implementation UIImage (flxExtension)
 
