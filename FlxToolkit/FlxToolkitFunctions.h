@@ -34,6 +34,7 @@ do { \
 #define FlxAssert(expression, ...) \
     if(!(expression)) { \
         NSString *assert_temp_string = [NSString stringWithFormat: @"Assertion failure: %s in %s on line %s:%d. %@", #expression, __PRETTY_FUNCTION__, __FILE__, __LINE__, [NSString stringWithFormat:__VA_ARGS__, nil]]; \
+        FlxLog(assert_temp_string); \
         NSAssert(NO, assert_temp_string);\
         abort(); \
     }
@@ -51,6 +52,7 @@ do { \
             [FlxAlert displayAlertWithTitle:@"Error!" message:[NSString stringWithFormat:@"Something went wrong! We're really sorry about that.\n\nHere's the Error:\n   %@", error]]; \
         } \
         NSString *exception = [NSString stringWithFormat:@"Try Failure.\n  Description: %@. \n  Failure: %s in %s on line %s:%d.", error, #expression, __PRETTY_FUNCTION__, __FILE__, __LINE__];\
+        FlxLog(exception); \
         NonFailingException(exception); \
     } else { \
         onSuccess; \
@@ -64,6 +66,7 @@ do { \
             [FlxAlert displayAlertWithTitle:@"Error!" message:[NSString stringWithFormat:@"Something went wrong! We're really sorry about that.\n\nHere's the Error:\n   %@", error]]; \
         } \
         NSString *exception = [NSString stringWithFormat:@"Try Failure.\n  Description: %@. \n  Failure: %s in %s on line %s:%d.", error, #expression, __PRETTY_FUNCTION__, __FILE__, __LINE__];\
+        FlxLog(exception); \
         NonFailingException(exception); \
         onFailure; \
     }
