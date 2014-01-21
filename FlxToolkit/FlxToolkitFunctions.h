@@ -46,30 +46,49 @@ do { \
 /**
  This will execute the success block only if the condition succeeds
  **/
+#ifdef NonFailingException
 #define FlxTrySucceed(expression, error, alert, onSuccess) \
     if (!(expression)){ \
         if (alert){ \
             [FlxAlert displayAlertWithTitle:@"Error!" message:[NSString stringWithFormat:@"Something went wrong! We're really sorry about that.\n\nHere's the Error:\n   %@", error]]; \
         } \
         NSString *exception = [NSString stringWithFormat:@"Try Failure.\n  Description: %@. \n  Failure: %s in %s on line %s:%d.", error, #expression, __PRETTY_FUNCTION__, __FILE__, __LINE__];\
-        FlxLog(exception); \
         NonFailingException(exception); \
     } else { \
         onSuccess; \
     }
+#else
+#define FlxTrySucceed(expression, error, alert, onSuccess) \
+    if (!(expression)){ \
+        if (alert){ \
+            [FlxAlert displayAlertWithTitle:@"Error!" message:[NSString stringWithFormat:@"Something went wrong! We're really sorry about that.\n\nHere's the Error:\n   %@", error]]; \
+        } \
+    } else { \
+        onSuccess; \
+    }
+#endif
 /**
  This will execute the failure block only if the condition fails
  **/
+#ifdef NonFailingException
 #define FlxTry(expression, error, alert, onFailure) \
     if (!(expression)){ \
         if (alert){ \
             [FlxAlert displayAlertWithTitle:@"Error!" message:[NSString stringWithFormat:@"Something went wrong! We're really sorry about that.\n\nHere's the Error:\n   %@", error]]; \
         } \
         NSString *exception = [NSString stringWithFormat:@"Try Failure.\n  Description: %@. \n  Failure: %s in %s on line %s:%d.", error, #expression, __PRETTY_FUNCTION__, __FILE__, __LINE__];\
-        FlxLog(exception); \
         NonFailingException(exception); \
         onFailure; \
     }
+#else
+#define FlxTry(expression, error, alert, onFailure) \
+    if (!(expression)){ \
+        if (alert){ \
+            [FlxAlert displayAlertWithTitle:@"Error!" message:[NSString stringWithFormat:@"Something went wrong! We're really sorry about that.\n\nHere's the Error:\n   %@", error]]; \
+        } \
+        onFailure; \
+    }
+#endif
 
 BOOL CGRectIsEqualToRect(CGRect rect1, CGRect rect2);
 
