@@ -15,12 +15,6 @@
     #define FlxLog(...) DebugLog(@"%s:%d - %@", __PRETTY_FUNCTION__, __LINE__, [NSString  stringWithFormat:__VA_ARGS__,nil])
     #define Debug(x) x
     #define DebugIf(x, y) x
-#else
-    #define FlxLog(...)
-    #define FlxLogF()
-    #define FlxLogS(...)
-    #define Debug(x)
-    #define DebugIf(x, y) y
 #endif
 
 #define SuppressSelectorWarning(Stuff) \
@@ -31,6 +25,7 @@ do { \
     _Pragma("clang diagnostic pop") \
 } while (0)
 
+#ifdef FlxLog
 #define FlxAssert(expression, ...) \
     if(!(expression)) { \
         NSString *assert_temp_string = [NSString stringWithFormat: @"Assertion failure: %s in %s on line %s:%d. %@", #expression, __PRETTY_FUNCTION__, __FILE__, __LINE__, [NSString stringWithFormat:__VA_ARGS__, nil]]; \
@@ -38,11 +33,15 @@ do { \
         NSAssert(NO, assert_temp_string);\
         abort(); \
     }
-
-//This allows you to define a nonfailing exception throw. For example, if you wanted to report the error to a service
-#ifndef NonFailingException
-    #define NonFailingException(x) FlxLog(x)
+#else
+#define FlxAssert(expression, ...) \
+    if(!(expression)) { \
+        NSAssert(NO, @"Assertion failure: %s in %s on line %s:%d. %@", #expression, __PRETTY_FUNCTION__, __FILE__, __LINE__, [NSString stringWithFormat:__VA_ARGS__, nil]); \
+        abort(); \
+    }
 #endif
+
+//You can define a NonFailingException(x) to customize the behavior of FlxTry & FlxTrySucceed
 /**
  This will execute the success block only if the condition succeeds
  **/
