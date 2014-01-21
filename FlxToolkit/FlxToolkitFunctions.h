@@ -15,6 +15,12 @@
     #define FlxLog(...) DebugLog(@"%s:%d - %@", __PRETTY_FUNCTION__, __LINE__, [NSString  stringWithFormat:__VA_ARGS__,nil])
     #define Debug(x) x
     #define DebugIf(x, y) x
+#else
+    #define FlxLogS(fmt, ...)
+    #define FlxLogF()
+    #define FlxLog(...)
+    #define Debug(x)
+    #define DebugIf(x, y) y
 #endif
 
 #define SuppressSelectorWarning(Stuff) \
