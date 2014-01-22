@@ -8,7 +8,6 @@
 
 #import <Foundation/Foundation.h>
 
-#define lastObj ULONG_MAX
 #define Array(...)   [NSArray arrayWithObjects:__VA_ARGS__,nil]
 #define MArray(...)  [NSMutableArray arrayWithObjects:__VA_ARGS__,nil]
 

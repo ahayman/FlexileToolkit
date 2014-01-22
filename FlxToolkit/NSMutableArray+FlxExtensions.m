@@ -19,7 +19,6 @@
 }
 - (id) objectAtIndexedSubscript:(NSUInteger)index{
     if (self.count < 1) return nil;
-    if (index == lastObj) index = self.count - 1;
     if (index >= self.count) return nil;
     return [self objectAtIndex:index];
 }
@@ -197,7 +196,7 @@
     }
 }
 - (void) setObject:(id)obj atIndexedSubscript:(NSUInteger)index{
-    if (index == lastObj) index = (self.count > 0) ? self.count - 1 : 0;
+    if (index >= self.count) index = (self.count > 0) ? self.count - 1 : 0;
     if (index < self.count){
         if (obj)
             [self replaceObjectAtIndex:index withObject:obj];
