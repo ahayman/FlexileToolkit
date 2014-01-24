@@ -88,6 +88,23 @@
 		93D171E51885ABF70028FF0F /* libFlxToolkit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 93D171CD1885ABF60028FF0F /* libFlxToolkit.a */; };
 		93D171EB1885ABF70028FF0F /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 93D171E91885ABF70028FF0F /* InfoPlist.strings */; };
 		93D171ED1885ABF70028FF0F /* FlxToolkitTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 93D171EC1885ABF70028FF0F /* FlxToolkitTests.m */; };
+		93DAEBB11892F25200F67F92 /* FlxToolkit.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 935334AE18870BFE005462DF /* FlxToolkit.h */; };
+		93DAEBB21892F25200F67F92 /* FlxToolkitClasses.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 93F051C6188833E200286167 /* FlxToolkitClasses.h */; };
+		93DAEBB31892F25200F67F92 /* FlxToolkitExtensions.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 9353351D18870CD6005462DF /* FlxToolkitExtensions.h */; };
+		93DAEBB41892F25200F67F92 /* FlxToolkitDefines.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 9353351E18870E2D005462DF /* FlxToolkitDefines.h */; };
+		93DAEBB51892F25200F67F92 /* FlxToolkitFunctions.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 9353351F18870F69005462DF /* FlxToolkitFunctions.h */; };
+		93DAEBB61892F25200F67F92 /* FlxAlert.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 935334A518870BFE005462DF /* FlxAlert.h */; };
+		93DAEBB71892F25200F67F92 /* FlxCollection.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 935334A618870BFE005462DF /* FlxCollection.h */; };
+		93DAEBB81892F25200F67F92 /* FlxDragGestureRecognizer.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 935334A718870BFE005462DF /* FlxDragGestureRecognizer.h */; };
+		93DAEBB91892F25200F67F92 /* FlxKVObserver.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 935334A818870BFE005462DF /* FlxKVObserver.h */; };
+		93DAEBBA1892F25200F67F92 /* FlxLinkedList.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 935334A918870BFE005462DF /* FlxLinkedList.h */; };
+		93DAEBBB1892F25200F67F92 /* FlxlPinchGestureRecognizer.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 935334AA18870BFE005462DF /* FlxlPinchGestureRecognizer.h */; };
+		93DAEBBC1892F25200F67F92 /* FlxOrderedCollection.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 935334AB18870BFE005462DF /* FlxOrderedCollection.h */; };
+		93DAEBBD1892F25200F67F92 /* FlxReferencedExecution.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 935334AC18870BFE005462DF /* FlxReferencedExecution.h */; };
+		93DAEBBE1892F25200F67F92 /* FlxTapGestureRecognizer.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 935334AD18870BFE005462DF /* FlxTapGestureRecognizer.h */; };
+		93DAEBBF1892F25200F67F92 /* FlxUIImagePicker.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 935334AF18870BFE005462DF /* FlxUIImagePicker.h */; };
+		93DAEBC01892F25200F67F92 /* FlxWeakContainer.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 935334B018870BFE005462DF /* FlxWeakContainer.h */; };
+		93DAEBC11892F25200F67F92 /* FlxWeakTimer.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 935334B118870BFE005462DF /* FlxWeakTimer.h */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -107,6 +124,23 @@
 			dstPath = "include/$(PRODUCT_NAME)";
 			dstSubfolderSpec = 16;
 			files = (
+				93DAEBB11892F25200F67F92 /* FlxToolkit.h in CopyFiles */,
+				93DAEBB21892F25200F67F92 /* FlxToolkitClasses.h in CopyFiles */,
+				93DAEBB31892F25200F67F92 /* FlxToolkitExtensions.h in CopyFiles */,
+				93DAEBB41892F25200F67F92 /* FlxToolkitDefines.h in CopyFiles */,
+				93DAEBB51892F25200F67F92 /* FlxToolkitFunctions.h in CopyFiles */,
+				93DAEBB61892F25200F67F92 /* FlxAlert.h in CopyFiles */,
+				93DAEBB71892F25200F67F92 /* FlxCollection.h in CopyFiles */,
+				93DAEBB81892F25200F67F92 /* FlxDragGestureRecognizer.h in CopyFiles */,
+				93DAEBB91892F25200F67F92 /* FlxKVObserver.h in CopyFiles */,
+				93DAEBBA1892F25200F67F92 /* FlxLinkedList.h in CopyFiles */,
+				93DAEBBB1892F25200F67F92 /* FlxlPinchGestureRecognizer.h in CopyFiles */,
+				93DAEBBC1892F25200F67F92 /* FlxOrderedCollection.h in CopyFiles */,
+				93DAEBBD1892F25200F67F92 /* FlxReferencedExecution.h in CopyFiles */,
+				93DAEBBE1892F25200F67F92 /* FlxTapGestureRecognizer.h in CopyFiles */,
+				93DAEBBF1892F25200F67F92 /* FlxUIImagePicker.h in CopyFiles */,
+				93DAEBC01892F25200F67F92 /* FlxWeakContainer.h in CopyFiles */,
+				93DAEBC11892F25200F67F92 /* FlxWeakTimer.h in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
