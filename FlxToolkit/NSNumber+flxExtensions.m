@@ -27,6 +27,7 @@
     if (!number1 && !number2) return YES;
     else if (!number1 && number2) return NO;
     else if (number1 && !number2) return NO;
+    else if (![number1 isKindOfClass:[NSNumber class]] || ![number2 isKindOfClass:[NSNumber class]]) return NO;
     else if ([number1 isEqualToNumber:number2]) return YES;
     else return NO;
 }
