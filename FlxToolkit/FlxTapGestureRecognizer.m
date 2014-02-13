@@ -106,10 +106,8 @@
         self.state = UIGestureRecognizerStateFailed;
         [self resetVars];
     }
-    FlxLog(@"Tap Begin: %lld", (long long)self);
 }
 - (void) touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event{
-    FlxLog(@"Tap Moved: %f", [NSDate timeIntervalSinceReferenceDate]);
     CGPoint point = [self avgPointForTouches:event.allTouches];
     if (touches.count != self.numberOfTouchesRequired ||
         !CGRectContainsPoint(self.view.bounds, [self.view.window.rootViewController.view convertPoint:point toView:self.view]) ||
@@ -121,10 +119,6 @@
     }
 }
 - (void) touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event{
-    FlxLog(@"Tap: %lld Ended: %f", (long long)self, [NSDate timeIntervalSinceReferenceDate]);
-    ExecuteBlockAfterDelay(.2, ^{
-        FlxLog(@"---------------");
-    });
     CGPoint point = [self avgPointForTouches:event.allTouches];
     if (touches.count != self.numberOfTouchesRequired ||
         !CGRectContainsPoint(self.view.bounds, [self.view.window.rootViewController.view convertPoint:point toView:self.view]) ||
@@ -147,7 +141,6 @@
     }
 }
 - (void) touchesCancelled:(NSSet *)touches withEvent:(UIEvent *)event{
-    FlxLog(@"Tap Cancelled: %f", [NSDate timeIntervalSinceReferenceDate]);
     self.state = UIGestureRecognizerStateCancelled;
     [self resetVars];
 }
