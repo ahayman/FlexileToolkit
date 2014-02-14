@@ -70,7 +70,7 @@
                                                                                                   CFSTR(""),
                                                                                                   kCFStringEncodingUTF8);
 }
-- (BOOL) containsString:(NSString *)string{
+- (BOOL) has:(NSString *)string{
     return ([self rangeOfString:string].location != NSNotFound);
 }
 @end

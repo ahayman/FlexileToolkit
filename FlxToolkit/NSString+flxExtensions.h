@@ -21,5 +21,5 @@
 - (NSString *) repeat:(NSUInteger)repeat;
 - (NSString *) urlSafeString;
 - (NSString *) encodedURLString;
-- (BOOL) containsString:(NSString *)string;
+- (BOOL) has:(NSString *)string;
 @end
