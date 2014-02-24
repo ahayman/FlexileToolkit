@@ -105,6 +105,7 @@
 		93DAEBBF1892F25200F67F92 /* FlxUIImagePicker.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 935334AF18870BFE005462DF /* FlxUIImagePicker.h */; };
 		93DAEBC01892F25200F67F92 /* FlxWeakContainer.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 935334B018870BFE005462DF /* FlxWeakContainer.h */; };
 		93DAEBC11892F25200F67F92 /* FlxWeakTimer.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 935334B118870BFE005462DF /* FlxWeakTimer.h */; };
+		93DFD44C18BBEEFF00DB9672 /* UIResponder+flxExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 93DFD44B18BBEEFF00DB9672 /* UIResponder+flxExtensions.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -218,6 +219,8 @@
 		93D171E81885ABF70028FF0F /* FlxToolkitTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "FlxToolkitTests-Info.plist"; sourceTree = "<group>"; };
 		93D171EA1885ABF70028FF0F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		93D171EC1885ABF70028FF0F /* FlxToolkitTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FlxToolkitTests.m; sourceTree = "<group>"; };
+		93DFD44A18BBEEFF00DB9672 /* UIResponder+flxExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIResponder+flxExtensions.h"; sourceTree = "<group>"; };
+		93DFD44B18BBEEFF00DB9672 /* UIResponder+flxExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIResponder+flxExtensions.m"; sourceTree = "<group>"; };
 		93F051C6188833E200286167 /* FlxToolkitClasses.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlxToolkitClasses.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -325,6 +328,8 @@
 				935334D718870BFE005462DF /* NSObject+flxExtensions.m */,
 				935334BA18870BFE005462DF /* NSString+flxExtensions.h */,
 				935334D818870BFE005462DF /* NSString+flxExtensions.m */,
+				93DFD44A18BBEEFF00DB9672 /* UIResponder+flxExtensions.h */,
+				93DFD44B18BBEEFF00DB9672 /* UIResponder+flxExtensions.m */,
 				935334BB18870BFE005462DF /* NSURL+flxExtensions.h */,
 				935334D918870BFE005462DF /* NSURL+flxExtensions.m */,
 				935334BC18870BFE005462DF /* UIColor+flxExtensions.h */,
@@ -486,6 +491,7 @@
 				9353350718870BFE005462DF /* NSNumberFormatter+flxExtensions.m in Sources */,
 				9353351118870BFE005462DF /* UIFont+flxExtensions.m in Sources */,
 				935334ED18870BFE005462DF /* FlxOrderedCollection.m in Sources */,
+				93DFD44C18BBEEFF00DB9672 /* UIResponder+flxExtensions.m in Sources */,
 				935334F918870BFE005462DF /* FlxWeakTimer.m in Sources */,
 				935334FB18870BFE005462DF /* NSDecimalNumber+flxExtensions.m in Sources */,
 				9353350518870BFE005462DF /* NSNumber+flxExtensions.m in Sources */,
