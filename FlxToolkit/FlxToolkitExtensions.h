@@ -23,3 +23,4 @@
 #import "NSURL+flxExtensions.h"
 #import "NSMutableURLRequest+flxExtensions.h"
 #import "UIGestureRecognizer+flxExtensions.h"
+#import "UIResponder+flxExtensions.h"
