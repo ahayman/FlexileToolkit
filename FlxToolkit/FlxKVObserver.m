@@ -166,6 +166,7 @@ static NSMutableDictionary * observerDict(id observer){
         FlxKVObservation *obs = [FlxKVObservation new];
         obs.oldValue = change[NSKeyValueChangeOldKey];
         obs.value = change[NSKeyValueChangeNewKey];
+        if (obs.value == [NSNull null]) obs.value = nil;
         obs.observedObject = _observedObject;
         obs.observedKey = _key;
         _changeBlock(obs);
