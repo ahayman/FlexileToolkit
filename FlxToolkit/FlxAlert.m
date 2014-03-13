@@ -32,6 +32,20 @@
     alert.buttons = Array(@"Yes", @"No");
     [alert display];
 }
++ (void) displayAlertTitle:(NSString *)title message:(NSString *)message buttons:(NSArray *)buttons completion:(AlertBlock)completion{
+    FlxAlert *alert = [FlxAlert alertWithTitle:title message:message completion:completion];
+    alert.cancelButton = buttons.firstObject ? : @"OK";
+    if (buttons.count > 1){
+        alert.buttons = ({
+            NSMutableArray *otherButtons = [NSMutableArray new];
+            for (int i = 1; i < buttons.count; i++){
+                [otherButtons addObject:buttons[i]];
+            }
+            otherButtons;
+        });
+    }
+    [alert display];
+}
 + (void) displayAlertWithTitle:(NSString *)title message:(NSString *)message completion:(AlertBlock)completion{
     [[FlxAlert alertWithTitle:title message:message completion:completion] display];
 }

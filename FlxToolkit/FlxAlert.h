@@ -8,8 +8,8 @@
 
 #import <Foundation/Foundation.h>
 
-typedef void (^AlertBlock)(NSUInteger);
-typedef void (^YesNoBlock)(BOOL boolValue);
+typedef void (^AlertBlock)(NSUInteger index);
+typedef void (^YesNoBlock)(BOOL yes);
 
 @interface FlxAlert : NSObject
 @property (strong) NSString *title;
@@ -20,6 +20,7 @@ typedef void (^YesNoBlock)(BOOL boolValue);
 + (void) displayYesNoAlertWithTitle:(NSString *)title message:(NSString *)message completion:(YesNoBlock)completion;
 + (void) displayAlertWithTitle:(NSString *)title message:(NSString *)message completion:(AlertBlock)completion;
 + (void) displayAlertWithTitle:(NSString *)title message:(NSString *)message;
++ (void) displayAlertTitle:(NSString *)title message:(NSString *)message buttons:(NSArray *)buttons completion:(AlertBlock)completion;
 + (FlxAlert *) alertWithTitle:(NSString *)title message:(NSString *)message completion:(AlertBlock)completion;
 
 - (void) display;
