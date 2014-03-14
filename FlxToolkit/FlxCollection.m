@@ -12,6 +12,7 @@
 
 @implementation FlxCollection{
     NSMutableDictionary *_collections;
+    NSMutableDictionary *_comparators;
     NSMutableSet *_objects;
 }
 #pragma mark - Class Methods
@@ -27,6 +28,7 @@
     if (self = [super init]){
         _keyPaths = keyPaths;
         _collections = [NSMutableDictionary new];
+        _comparators = [NSMutableDictionary new];
         _objects = [NSMutableSet new];
         for (NSString *key in keyPaths){
             _collections[key] = [NSMutableDictionary new];
@@ -56,9 +58,21 @@
         if (!current){
             _collections[key][value] = observation.observedObject;
         } else if ([current isKindOfClass:[NSMutableArray class]]){
-            [current addObject:observation.observedObject];
+            FlxCollectionComparator comparator = _comparators[key];
+            if (comparator){
+                [current insertObject:observation.observedObject withComparator:comparator];
+            } else {
+                [current addObject:observation.observedObject];
+            }
         } else {
-            _collections[key][value] = MArray(current, observation.observedObject);
+            FlxCollectionComparator comparator = _comparators[key];
+            if (comparator){
+                NSMutableArray *array = MArray(current);
+                [array insertObject:observation.observedObject withComparator:comparator];
+                _collections[key][value] = array;
+            } else {
+                _collections[key][value] = MArray(current, observation.observedObject);
+            }
         }
     }
 }
@@ -112,20 +126,29 @@
     if ([self containsObject:object]) return;
     
     [_objects addObject:object];
-    //Extract Keys
+    
     for (NSString *key in _keyPaths){
-        //First check that we're not already tracking the object
         id objectValue = [object valueForKeyPath:key];
-        
         if (objectValue){
-            //Check if there's already an object stored
             id currentObject = _collections[key][objectValue];
             if (!currentObject){
                 _collections[key][objectValue] = object;
             } else if ([currentObject isKindOfClass:[NSMutableArray class]]){
-                [currentObject addObject:object];
+                FlxCollectionComparator comparator = _comparators[key];
+                if (comparator){
+                    [currentObject insertObject:object withComparator:comparator];
+                } else {
+                    [currentObject addObject:object];
+                }
             } else {
-                _collections[key][objectValue] = MArray(currentObject, object);
+                FlxCollectionComparator comparator = _comparators[key];
+                if (comparator){
+                    NSMutableArray *array = MArray(currentObject);
+                    [array insertObject:object withComparator:comparator];
+                    _collections[key][objectValue] = array;
+                } else {
+                    _collections[key][objectValue] = MArray(currentObject, object);
+                }
             }
         }
         [FlxKVObserver observeKey:NSSelectorFromString(key) inObject:object target:self action:@selector(observedValueChange:)];
@@ -165,6 +188,69 @@
     }
     for (id object in _objects){
         [FlxKVObserver stopObservingObject:object with:self];
+    }
+}
+- (void) setOrderComparator:(FlxCollectionComparator)comparator forKeyPath:(NSString *)keypath{
+    if (!keypath) return;
+    _comparators[keypath] = comparator;
+    
+    [self updateOrderOfAllObjectsInKeyPath:keypath];
+}
+- (void) updateOrderOfObject:(id)object{
+    [self updateOrderOfObjects:Array(object)];
+}
+- (void) updateOrderOfObjects:(NSArray *)objects{
+    for (NSString *keyPath in _comparators.allKeys){
+        [self updateOrderOfObjects:objects inKeyPath:keyPath];
+    }
+}
+- (void) updateOrderOfObject:(id)object inKeyPath:(NSString *)keypath{
+    if (!object || !keypath) return;
+    [self updateOrderOfObjects:Array(object) inKeyPath:keypath];
+}
+- (void) updateOrderOfObjects:(NSArray *)objects inKeyPath:(NSString *)keypath{
+    if (!keypath || !objects.count) return;
+    
+    FlxCollectionComparator comparator = _comparators[keypath];
+    if (!comparator) return;
+    
+    //To preserve ordering, we first remove all objects from their leaf arrays and then re-add them in separate operations.  This ensures that another object that needs to be reordered isn't skewing the comparator results by being present in the array.
+    NSMutableArray *leafArrays = [NSMutableArray new];
+    for (id object in objects){
+        id value = [object valueForKeyPath:keypath];
+        if (!value){
+            [leafArrays addObject:[NSNull null]];
+        } else {
+            [leafArrays addObject:(_collections[keypath][value]) ? : [NSNull null]];
+        }
+    }
+    
+    for (int i = 0; i < objects.count; i++){
+        id object = objects[i];
+        NSMutableArray *leafArray = leafArrays[i];
+        if ([leafArray isKindOfClass:[NSMutableArray class]]){
+            [leafArray removeObject:object];
+        }
+    }
+    
+    for (int i = 0; i < objects.count; i++){
+        id object = objects[i];
+        NSMutableArray *leafArray = leafArrays[i];
+        if ([leafArray isKindOfClass:[NSMutableArray class]]){
+            [leafArray insertObject:object withComparator:comparator];
+        }
+    }
+}
+- (void) updateOrderOfAllObjectsInKeyPath:(NSString *)keypath{
+    if (!keypath) return;
+    FlxCollectionComparator comparator = _comparators[keypath];
+    if (comparator){
+        NSDictionary *collection = _collections[keypath];
+        for (NSMutableArray *objects in collection.allValues){
+            if ([objects isKindOfClass:[NSMutableArray class]]){
+                [objects sortUsingComparator:comparator];
+            }
+        }
     }
 }
 #pragma mark - Protocol Method

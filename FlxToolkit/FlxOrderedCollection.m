@@ -8,7 +8,6 @@
 
 #import "FlxOrderedCollection.h"
 #import "FlxToolkitExtensions.h"
-#import "FlxCollection.h"
 
 @implementation FlxOrderedCollection{
     FlxCollection *_collection;
@@ -24,6 +23,15 @@
     if (self = [super init]){
         _collection = [FlxCollection collectionWithKeyPaths:keyPaths];
         _objects = [NSMutableArray new];
+        NSArray *objectArray = _objects;
+        FlxCollectionComparator comparator = ^NSComparisonResult (id obj1, id obj2){
+            NSUInteger idx1 = [objectArray indexOfObject:obj1];
+            NSUInteger idx2 = [objectArray indexOfObject:obj2];
+            return (idx1 < idx2) ? NSOrderedAscending : (idx1 > idx2) ? NSOrderedAscending : NSOrderedSame;
+        };
+        for (NSString *keyPath in keyPaths){
+            [_collection setOrderComparator:comparator forKeyPath:keyPath];
+        }
     }
     return self;
 }
@@ -88,6 +96,12 @@
     [_objects removeObject:object];
     [_collection removeObject:object];
 }
+- (void) removeObjects:(NSArray *)objects{
+    for (id object in objects){
+        [_objects removeObject:object];
+    }
+    [_collection removeObjects:objects];
+}
 - (void) removeObjectForKey:(id)key usingKeyPath:(NSString *)keyPath{
     id object = [_collection objectForKey:key usingKeyPath:keyPath];
     if (!object) return;
@@ -106,12 +120,15 @@
 }
 - (void) moveObjectAtIndex:(NSUInteger)fromIndex toIndex:(NSUInteger)toIndex{
     [_objects moveObjectAtIndex:fromIndex toIndex:toIndex];
+    [_collection updateOrderOfObject:_objects[toIndex]];
 }
 - (void) moveObjectAtIndex:(NSUInteger)fromIndex toIndex:(NSUInteger)toIndex withBlock:(void (^)(id, NSUInteger, NSUInteger))block{
     [_objects moveObjectAtIndex:fromIndex toIndex:toIndex withBlock:block];
+    [_collection updateOrderOfObject:_objects[toIndex]];
 }
 - (void) swap:(NSUInteger)index with:(NSUInteger)index2{
     [_objects swap:index with:index2];
+    [_collection updateOrderOfObjects:Array(_objects[index], _objects[index2])];
 }
 #pragma mark - Protocol Method
 - (id) objectForKeyedSubscript:(id)key{
