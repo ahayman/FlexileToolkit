@@ -27,7 +27,7 @@
         FlxCollectionComparator comparator = ^NSComparisonResult (id obj1, id obj2){
             NSUInteger idx1 = [objectArray indexOfObject:obj1];
             NSUInteger idx2 = [objectArray indexOfObject:obj2];
-            return (idx1 < idx2) ? NSOrderedAscending : (idx1 > idx2) ? NSOrderedAscending : NSOrderedSame;
+            return (idx1 < idx2) ? NSOrderedAscending : (idx1 > idx2) ? NSOrderedDescending : NSOrderedSame;
         };
         for (NSString *keyPath in keyPaths){
             [_collection setOrderComparator:comparator forKeyPath:keyPath];
