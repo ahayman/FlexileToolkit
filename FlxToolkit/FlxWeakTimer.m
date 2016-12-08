@@ -80,8 +80,8 @@
         [_timer invalidate];
         _timer = nil;
     } else if (_timer) {
-        if (_userInfo) objc_msgSend(_target, _action, _userInfo);
-        else objc_msgSend(_target, _action);
+        if (_userInfo) ((void(*)(id, SEL, id))objc_msgSend)(_target, _action, _userInfo);
+        else ((void(*)(id, SEL))objc_msgSend)(_target, _action);
     }
 }
 - (void) fireAfterDelay:(NSTimeInterval)delay{

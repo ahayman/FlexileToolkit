@@ -50,21 +50,21 @@
     SEL selector = NSSelectorFromString(selectorString);
     NSMutableDictionary *selectors = self.associatedInfo[FlxNeedToPerformKey];
     id object = selectors[selectorString];
-    selectors[selectorString] = nil;
+  	[selectors removeObjectForKey:selectorString];
     [self performSelectorOnMainThread:selector withObject:(object != [NSNull null]) ? object : nil waitUntilDone:NO];
 }
 - (void) performSelectorOnceAfterDelay:(SEL)selector{
-    NSMutableArray *selectors = self.associatedInfo[FlxConsolidatedPerformKey];
+    NSMutableSet *selectors = self.associatedInfo[FlxConsolidatedPerformKey];
     if (!selectors){
-        selectors = [NSMutableArray new];
+        selectors = [NSMutableSet new];
         self.associatedInfo[FlxConsolidatedPerformKey] = selectors;
         [self performSelector:@selector(_flxConsolidatedSelectorPerform) withObject:nil afterDelay:0 inModes:@[NSRunLoopCommonModes]];
     }
     [selectors addObject:NSStringFromSelector(selector)];
 }
 - (void) _flxConsolidatedSelectorPerform{
-    NSMutableArray *selectors = self.associatedInfo[FlxConsolidatedPerformKey];
-    self.associatedInfo[FlxConsolidatedPerformKey] = nil;
+    NSMutableSet *selectors = self.associatedInfo[FlxConsolidatedPerformKey];
+  	[self.associatedInfo removeObjectForKey:FlxConsolidatedPerformKey];
     for (NSString *selectorString in selectors){
         [self performSelectorOnMainThread:NSSelectorFromString(selectorString) withObject:nil waitUntilDone:NO];
     }

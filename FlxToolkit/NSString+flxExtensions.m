@@ -73,4 +73,16 @@
 - (BOOL) has:(NSString *)string{
     return ([self rangeOfString:string].location != NSNotFound);
 }
+- (CGSize) sizeWithUIFont:(UIFont *)font{
+  if (font){
+    return [self sizeWithAttributes:@{NSFontAttributeName : font}];
+  }
+  return CGSizeZero;
+}
+- (CGSize) sizeWithUIFont:(UIFont *)font constrainedToSize:(CGSize)size{
+  if (font){
+    return [self boundingRectWithSize:size options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName : font} context:nil].size;
+  }
+  return size;
+}
 @end

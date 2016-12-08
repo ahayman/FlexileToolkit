@@ -6,7 +6,7 @@
 //  Copyright (c) 2012 __MyCompanyName__. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 
 #define $(...)        [NSString  stringWithFormat:__VA_ARGS__,nil]
 
@@ -22,4 +22,6 @@
 - (NSString *) urlSafeString;
 - (NSString *) encodedURLString;
 - (BOOL) has:(NSString *)string;
+- (CGSize) sizeWithUIFont:(UIFont *)font;
+- (CGSize) sizeWithUIFont:(UIFont *)font constrainedToSize:(CGSize)size;
 @end

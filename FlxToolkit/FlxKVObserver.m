@@ -7,15 +7,14 @@
 //
 
 #import "FlxKVObserver.h"
-#import "FlxToolkitDefines.h"
 #include <objc/runtime.h>
 #include <objc/message.h>
 
 @interface FlxKVObservation ()
-@property (strong) id oldValue;
-@property (strong) id value;
-@property (strong) id observedObject;
-@property (readwrite) SEL observedKey;
+@property (nonatomic, readwrite) id oldValue;
+@property (nonatomic, readwrite) id value;
+@property (nonatomic, readwrite) id observedObject;
+@property (nonatomic, readwrite) SEL observedKey;
 @end
 @implementation FlxKVObservation
 @end
@@ -34,36 +33,41 @@ static NSMutableDictionary * observerDict(id observer){
 
 @interface FlxKVTargetObserver : NSObject
 - (id) initWithObservationKey:(SEL)key forObject:(id)object with:(__weak id)observer action:(SEL)action;
-- (void) beginObservation;
+- (void) beginObservationWithInitial:(BOOL)initial;
 @end
 
 @interface FlxKVBlockObserver : NSObject
 - (id) initWithObservationKey:(SEL)key forObject:(id)object usingChangeBlock:(void (^)(FlxKVObservation *observation))changeBlock;
-- (void) beginObservingFrom:(id)observer;
+- (void) beginObservingFrom:(id)observer initial:(BOOL)initial;
 @end
 
 @implementation FlxKVObserver
 #pragma mark - Target/Action Observation
 + (void) observeKey:(SEL)key inObject:(__weak id)object target:(__weak id)observer action:(SEL)action{
     FlxKVTargetObserver *obs = [[FlxKVTargetObserver alloc] initWithObservationKey:key forObject:object with:observer action:action];
-    [obs beginObservation];
+    [obs beginObservationWithInitial:NO];
 }
-+ (void) stopObserving:(SEL)key inObject:(id)object with:(id)observer{
-    if (!object || !observer) return;
-    observerDict(observer)[@((NSInteger)object)][NSStringFromSelector(key)] = nil;
-}
-+ (void) stopObservingObject:(id)object with:(id)observer{
-    if (!object || !observer) return;
-    [observerDict(observer) removeObjectForKey:@((NSInteger)object)];
++ (void) observeWithInitialValueOfKey:(SEL)key inObject:(id)object target:(__weak id)observer action:(SEL)action{
+    FlxKVTargetObserver *obs = [[FlxKVTargetObserver alloc] initWithObservationKey:key forObject:object with:observer action:action];
+    [obs beginObservationWithInitial:YES];
 }
 #pragma mark - Block Observation
 + (void) observeKey:(SEL)key inObject:(id)object fromObserver:(__weak id)observer onChange:(void (^)(FlxKVObservation *))changeBlock{
     FlxKVBlockObserver *obs = [[FlxKVBlockObserver alloc] initWithObservationKey:key forObject:object usingChangeBlock:changeBlock];
-    [obs beginObservingFrom:observer];
+    [obs beginObservingFrom:observer initial:NO];
 }
-+ (void) stopObserver:(id)observer fromObservingKey:(NSString *)key{
-    if (!observer || !key) return;
-    [observerDict(observer) removeObjectForKey:key];
++ (void) observeWithInitialValueOfKey:(SEL)key inObject:(id)object fromObserver:(__weak id)observer onChange:(void (^)(FlxKVObservation *observation))changeBlock{
+    FlxKVBlockObserver *obs = [[FlxKVBlockObserver alloc] initWithObservationKey:key forObject:object usingChangeBlock:changeBlock];
+    [obs beginObservingFrom:observer initial:YES];
+}
+#pragma mark - Removing observations
++ (void) stopObserving:(SEL)key inObject:(id)object with:(id)observer{
+    if (!object || !observer) return;
+    [observerDict(observer)[@((NSInteger)object)] removeObjectForKey:NSStringFromSelector(key)];
+}
++ (void) stopObservingObject:(id)object with:(id)observer{
+    if (!object || !observer) return;
+    [observerDict(observer) removeObjectForKey:@((NSInteger)object)];
 }
 #pragma mark - ===============
 + (void) stopObserving:(id)observed{
@@ -105,11 +109,15 @@ static NSMutableDictionary * observerDict(id observer){
 }
 #pragma mark - Properties
 #pragma mark - Standard Methods
-- (void) beginObservation{
+- (void) beginObservationWithInitial:(BOOL)initial{
     if (!_target) return;
     NSString *keyPath = NSStringFromSelector(_observedKey);
     [self objectTargetObservers][keyPath] = self;
-    [_observedObject addObserver:self forKeyPath:keyPath options:NSKeyValueObservingOptionNew | NSKeyValueObservingOptionOld context:NULL];
+    if (initial){
+        [_observedObject addObserver:self forKeyPath:keyPath options:NSKeyValueObservingOptionNew | NSKeyValueObservingOptionOld | NSKeyValueObservingOptionInitial context:NULL];
+    } else {
+        [_observedObject addObserver:self forKeyPath:keyPath options:NSKeyValueObservingOptionNew | NSKeyValueObservingOptionOld context:NULL];
+    }
 }
 #pragma mark - Protocol Method
 - (void) observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context{
@@ -120,7 +128,7 @@ static NSMutableDictionary * observerDict(id observer){
         if (obs.value == [NSNull null]) obs.value = nil;
         obs.observedObject = _observedObject;
         obs.observedKey = _observedKey;
-        objc_msgSend(_target, _action, obs);
+        ((void(*)(id, SEL, id))objc_msgSend)(_target, _action, obs);
     } else {
         [FlxKVObserver stopObserving:_observedKey inObject:_observedObject with:_target];
     }
@@ -138,7 +146,7 @@ static NSMutableDictionary * observerDict(id observer){
 @implementation FlxKVBlockObserver {
     id _observedObject;
     SEL _key;
-    IDBlock _changeBlock;
+    void (^_changeBlock)(id);
 }
 #pragma mark - Init Methods
 - (id) initWithObservationKey:(SEL)key forObject:(id)object usingChangeBlock:(void (^)(FlxKVObservation *))changeBlock{
@@ -175,11 +183,15 @@ static NSMutableDictionary * observerDict(id observer){
 }
 #pragma mark - Properties
 #pragma mark - Standard Methods
-- (void) beginObservingFrom:(id)observer{
+- (void) beginObservingFrom:(id)observer initial:(BOOL)initial{
     if (observer == _observedObject) return;
     NSString *keyPath = NSStringFromSelector(_key);
     [self observersForObserver:observer][keyPath] = self;
-    [_observedObject addObserver:self forKeyPath:keyPath options:NSKeyValueObservingOptionNew | NSKeyValueObservingOptionOld context:NULL];
+    if (initial){
+        [_observedObject addObserver:self forKeyPath:keyPath options:NSKeyValueObservingOptionNew | NSKeyValueObservingOptionOld | NSKeyValueObservingOptionInitial context:NULL];
+    } else {
+        [_observedObject addObserver:self forKeyPath:keyPath options:NSKeyValueObservingOptionNew | NSKeyValueObservingOptionOld context:NULL];
+    }
 }
 #pragma mark - Overridden Methods
 - (void) dealloc{

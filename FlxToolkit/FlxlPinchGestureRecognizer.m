@@ -35,17 +35,16 @@
         _totalTouchCount = event.allTouches.count;
 }
 - (void) touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event{
-    [super touchesMoved:touches withEvent:event];
     _totalTouchCount = event.allTouches.count;
+    [super touchesMoved:touches withEvent:event];
 }
 - (void) touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event{
-    
-    [super touchesEnded:touches withEvent:event];
     _totalTouchCount = event.allTouches.count;
+    [super touchesEnded:touches withEvent:event];
 }
 - (void) touchesCancelled:(NSSet *)touches withEvent:(UIEvent *)event{
-    [super touchesCancelled:touches withEvent:event];
     _totalTouchCount = event.allTouches.count;
+    [super touchesCancelled:touches withEvent:event];
 }
 
 @end

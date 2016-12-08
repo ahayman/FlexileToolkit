@@ -14,7 +14,6 @@
 @interface NSArray (flxExtensions)
 + (NSArray *) arrayWithArray:(NSArray *)array typeCheck:(Class)classType;
 - (id) firstObject;
-- (id) objectAtIndexedSubscript:(NSUInteger)index;
 - (id) objectForKeyedSubscript:(id)key;
 - (NSUInteger) lastIndex;
 @end
@@ -30,9 +29,8 @@
 - (id) pop;
 - (id) peek;
 - (NSUInteger) append:(id)objectOrArray;
-- (NSUInteger)    insertObject:(id)object withComparator:(NSComparisonResult (^)(id object1, id object2))block;
+- (NSUInteger) insertObject:(id)object withComparator:(NSComparisonResult (^)(id object1, id object2))block;
 - (NSUInteger) insertionIndexOfObject:(id)object withComparator:(NSComparisonResult (^)(id object1, id object2))block;
-- (void)setObject: (id)obj atIndexedSubscript: (NSUInteger)index;
 - (void) addDistinctObjects:(NSArray *)objects;
 - (id) deepCopy;
 @end

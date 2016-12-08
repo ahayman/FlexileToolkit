@@ -86,8 +86,7 @@
         _iPicker = [[UIImagePickerController alloc] init];
         _iPicker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
         _iPicker.delegate = self;
-        _iPicker.allowsEditing = YES;
-        
+      
         if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad){
             if (_upc.contentViewController == _iPicker) [_upc dismissPopoverAnimated:NO];
             else {
@@ -107,7 +106,6 @@
         _iPicker.sourceType = UIImagePickerControllerSourceTypeCamera;
         _iPicker.showsCameraControls = YES;
         _iPicker.delegate = self;
-        _iPicker.allowsEditing = YES;
         [_rootController presentViewController:_iPicker animated:YES completion:nil];
     }];
 }

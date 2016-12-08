@@ -17,11 +17,6 @@
     if (self.count > 0) return [self objectAtIndex:0];
     else return nil;
 }
-- (id) objectAtIndexedSubscript:(NSUInteger)index{
-    if (self.count < 1) return nil;
-    if (index >= self.count) return nil;
-    return [self objectAtIndex:index];
-}
 - (NSUInteger) lastIndex{
     return (self.count > 0) ? self.count - 1 : 0;
 }
@@ -193,17 +188,6 @@
             case NSOrderedDescending: lower = center + 1; break;
             case NSOrderedSame: return center;
         }
-    }
-}
-- (void) setObject:(id)obj atIndexedSubscript:(NSUInteger)index{
-    if (index >= self.count) index = (self.count > 0) ? self.count - 1 : 0;
-    if (index < self.count){
-        if (obj)
-            [self replaceObjectAtIndex:index withObject:obj];
-        else
-            [self removeObjectAtIndex:index];
-    } else if (obj) {
-        [self addObject:obj];
     }
 }
 - (void) addDistinctObjects:(NSArray *)objects{

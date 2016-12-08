@@ -44,12 +44,12 @@
         id current = _collections[key][observation.oldValue];
         if ([current isKindOfClass:[NSMutableArray class]]){
             if ([current count] < 2){
-                _collections[key][observation.oldValue] = nil;
+  							[_collections[key] removeObjectForKey:observation.oldValue];
             } else {
                 [current removeObject:observation.observedObject];
             }
         } else {
-            _collections[key][observation.oldValue] = nil;
+  					[_collections[key] removeObjectForKey:observation.oldValue];
         }
     }
     value = observation.value;
@@ -169,7 +169,16 @@
         id objectValue = [object valueForKeyPath:key];
         
         if (objectValue){
-            _collections[key][objectValue] = nil;
+          id leaf = _collections[key][objectValue];
+          if ([leaf isKindOfClass:[NSArray class]]){
+            if ([leaf count] <= 1){
+              [_collections[key] removeObjectForKey:objectValue];
+            } else {
+              [leaf removeObject:object];
+            }
+          } else {
+						[_collections[key] removeObjectForKey:objectValue];
+          }
         }
     }
     [FlxKVObserver stopObservingObject:object with:self];
@@ -227,6 +236,7 @@
     
     for (int i = 0; i < objects.count; i++){
         id object = objects[i];
+  			if (i >= leafArrays.count) continue;
         NSMutableArray *leafArray = leafArrays[i];
         if ([leafArray isKindOfClass:[NSMutableArray class]]){
             [leafArray removeObject:object];
@@ -235,6 +245,7 @@
     
     for (int i = 0; i < objects.count; i++){
         id object = objects[i];
+  			if (i >= leafArrays.count) continue;
         NSMutableArray *leafArray = leafArrays[i];
         if ([leafArray isKindOfClass:[NSMutableArray class]]){
             [leafArray insertObject:object withComparator:comparator];
@@ -256,6 +267,7 @@
 #pragma mark - Protocol Method
 - (id) objectForKeyedSubscript:(id)key{
     if (!key) return nil;
+  #warning Look into this, it can return an array and I think we don't want that
     return _collections[_keyPaths.firstObject][key];
 }
 - (NSUInteger)countByEnumeratingWithState:(NSFastEnumerationState *)state objects:(id __unsafe_unretained [])buffer count:(NSUInteger)len{

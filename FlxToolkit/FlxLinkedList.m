@@ -160,6 +160,13 @@
 - (FlxLinkListIterator *) newIterator{
     return [[FlxLinkListIterator alloc] initWithLinkedList:self];
 }
+- (NSArray *) array{
+  NSMutableArray *array = [NSMutableArray new];
+  for (id item in self){
+    [array addObject:item];
+  }
+  return array;
+}
 #pragma mark - Overwritten methods
 - (NSString *) description{
     int count = 0;

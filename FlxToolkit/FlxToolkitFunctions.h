@@ -77,7 +77,7 @@ do { \
 #ifdef NonFailingException
 #define FlxTry(expression, error, alert, onFailure) \
     if (!(expression)){ \
-        if (alert){ \
+        if ((alert)){ \
             [FlxAlert displayAlertWithTitle:@"Error!" message:[NSString stringWithFormat:@"Something went wrong! We're really sorry about that.\n\nHere's the Error:\n   %@", error]]; \
         } \
         NSString *exception = [NSString stringWithFormat:@"Try Failure.\n  Description: %@. \n  Failure: %s in %s on line %s:%d.", error, #expression, __PRETTY_FUNCTION__, __FILE__, __LINE__];\
@@ -87,7 +87,7 @@ do { \
 #else
 #define FlxTry(expression, error, alert, onFailure) \
     if (!(expression)){ \
-        if (alert){ \
+        if ((alert)){ \
             [FlxAlert displayAlertWithTitle:@"Error!" message:[NSString stringWithFormat:@"Something went wrong! We're really sorry about that.\n\nHere's the Error:\n   %@", error]]; \
         } \
         onFailure; \

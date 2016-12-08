@@ -113,7 +113,7 @@
     for (int i = 0; i < _targets.count; i++){
         target = [[_targets objectAtIndex:i] nonretainedObjectValue];
         selString = [_selectors objectAtIndex:i];
-        objc_msgSend(target, NSSelectorFromString(selString));
+        ((void(*)(id, SEL))objc_msgSend)(target, NSSelectorFromString(selString));
     }
 }
 @end

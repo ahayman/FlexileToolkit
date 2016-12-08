@@ -11,6 +11,7 @@
 
 @interface FlxLinkedList : NSObject <NSFastEnumeration, NSCopying>
 @property NSUInteger count;
+@property (nonatomic, readonly) NSArray *array;
 
 + (FlxLinkedList *) listWithObject:(id)object;
 + (FlxLinkedList *) linkedListFromArray:(NSArray *)array;

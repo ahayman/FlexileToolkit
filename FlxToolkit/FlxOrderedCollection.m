@@ -66,6 +66,7 @@
     return [_collection objectsForKey:key];
 }
 - (id) objectAtIndex:(NSUInteger)index{
+  	if (index >= _objects.count) return nil;
     return _objects[index];
 }
 - (NSUInteger) indexOfObject:(id)object{
@@ -84,9 +85,11 @@
 - (void) insertObject:(id)object atIndex:(NSUInteger)index{
     if (!object)return;
     [_objects insertObject:object atIndex:index];
+  [_collection addObject:object];
 }
 - (void) replaceObjectAtIndex:(NSUInteger)index withObject:(id)object{
     if (!object) return;
+  	if (index >= _objects.count) return;
     id oldObject = _objects[index];
     [_objects replaceObjectAtIndex:index withObject:object];
     [_collection removeObject:oldObject];
@@ -109,6 +112,7 @@
     [_collection removeObject:object];
 }
 - (void) removeObjectAtIndex:(NSUInteger)index{
+  	if (index >= _objects.count) return;
     id object = _objects[index];
     if (!object) return;
     [_objects removeObjectAtIndex:index];
@@ -135,9 +139,14 @@
     return [_collection objectForKeyedSubscript:key];
 }
 - (void) setObject:(id)obj atIndexedSubscript:(NSUInteger)index{
+  if (obj){
     [self replaceObjectAtIndex:index withObject:obj];
+  } else {
+    [self removeObjectAtIndex:index];
+  }
 }
 - (id) objectAtIndexedSubscript:(NSUInteger)index{
+  	if (index >= _objects.count) return nil;
     return _objects[index];
 }
 - (NSUInteger)countByEnumeratingWithState:(NSFastEnumerationState *)state objects:(id __unsafe_unretained [])buffer count:(NSUInteger)len{
